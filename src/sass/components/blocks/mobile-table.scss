@@ -1,78 +1,44 @@
 .mobile-table {
 	margin: 1rem 0;
+	font-size: $font-size-h6-sm;
+	line-height: $line-height-base;
 	display: table;
+	border-collapse: collapse;
 	width: 100%;
-
-	
-	&.vertical-top{
-		.mobile-table__td{
-			vertical-align: top;
-		}
-	}
 	
 	&__tr {
-		@media (min-width:768px){
-			display: table-row;
+		border-bottom: 1px solid $grey-brand-3;
+
+		&:first-child {
+			border-top: 1px solid $grey-brand-3;
 		}
-		
-		&--last-line{
-			.mobile-table__td{
-				position: relative;
-				
-				&:last-child{
-					padding-bottom: 2.5rem;
-					
-					&:before{
-						content: '';
-						border-bottom: 1px solid $grey-brand-1;	
-						position:absolute;
-						left: 0;
-						right: 0;
-						bottom: 1rem;	
-					}
-				}
-				
-				@media (min-width:768px){
-					padding-bottom: 2.5rem !important;
-					
-					&:before{
-						content: '';
-						border-bottom: 1px solid $grey-brand-1;	
-						position:absolute;
-						left: 0;
-						right: 0;
-						bottom: 1rem;	
-					}
-				}			
-			}
+
+		&.is-head {
+			background: lighten($grey-brand-3, 13%);
+		}
+
+		@media (min-width:768px) {
+			display: table-row;
 		}
 	}
 
 	&__td {
 		word-break: break-word;
-		padding: 0.3333rem 0;
 		text-align: left;
-			
-		&:first-child {
-		    font-size: 0.8rem;
-		    color: $grey-brand-1;
-		    padding-bottom: 0;
-		}
-		
-		@media (min-width:768px){
+		padding: 10px 20px;
+
+		@media (min-width: 768px){
 			display: table-cell;
 			vertical-align: middle;
 			width: 50%;
-			padding: 0.6666rem 0;
-			
+		}
+
+		@media (max-width: 768px){
 			&:first-child {
-				padding-right: $table-cell-padding;
-				padding-bottom:  0.6666rem;
+				padding-bottom: 0;
 			}
 		}
-	}
-	
-	small{
-		font-size: 100%;
+		
+		
 	}
 }
