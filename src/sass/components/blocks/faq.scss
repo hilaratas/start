@@ -1,0 +1,92 @@
+.faq {
+
+	&__list {
+		margin: 0;
+		padding: 0;
+	}
+
+	&__item {
+
+		margin: 0 0 20px;
+		padding-bottom: 20px;
+		border-bottom: 1px dotted $grey-brand-1; 
+	}
+
+	&__icon-holder {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	&__icon {
+		width: 20px;
+		height: 20px;
+		display: block;
+
+		&:before, &:after {
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: block;
+			width: 20px;
+			height: 20px;
+			line-height: 20px;
+			transition: $transition-duration;
+			text-align: center;
+			border-radius: $border-radius;
+			font-style: normal;
+		}
+
+		&:before {
+			content: "?";
+			background: $grey-brand-1;
+			opacity: 1;
+		}
+
+		&:after {
+			content: "!";
+			background: #a1b9d2;
+			opacity: 0;
+			color: $color-brand-6;
+
+		}
+
+		.active & {
+			&:before {
+				opacity: 0;
+			}
+
+			&:after {
+				opacity: 1;
+			}
+		}
+
+	}
+
+	&__q {
+		padding-left: 35px;
+		position: relative;
+		line-height: 1.13;
+		font-weight: $font-medium;
+		cursor:pointer;
+	}
+
+	&__a {
+		padding-left: 35px;
+		position: relative;
+		height: 0px;
+		overflow: hidden;
+		opacity: 0;
+		transition: all $transition-duration*1.5;
+
+		.active & {
+			height: auto;
+			opacity: 1;
+		}
+	}
+
+	&__a-header {
+		color: $color-brand-3;
+		margin: 17px 0;  
+	}
+}

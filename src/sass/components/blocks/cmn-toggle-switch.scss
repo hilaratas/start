@@ -1,0 +1,161 @@
+/* =============================================================================
+  MENU TOGGLE SWITCHES
+============================================================================= */
+
+// vars
+$button-width: $header-height-mobile;
+$button-height: $header-height-mobile;
+$cross-width: 20px;
+$cross-height: 20px;
+$bar-thickness: 3px;
+$button-pad: 0px;
+$button-trans-delay: 0.3s;
+
+
+
+/**
+ * Toggle Switch Globals
+ *
+ * All switches should take on the class `cmn-toggle-switch` as well as their
+ * variant that will give them unique properties. This class is an overview
+ * class that acts as a reset for all versions of the icon.
+ */
+
+.cmn-toggle-switch {
+  display: block;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  text-indent: -9999px;
+  appearance: none;
+  box-shadow: none;
+  border-radius: none;
+  border: none;
+  cursor: pointer;
+  transition: background $button-trans-delay;
+
+  &:focus {
+    outline: none;
+  }
+  
+  span {
+    height: $bar-thickness;
+    background: rgb(255,255,255);
+    border-radius: $bar-thickness/2;
+  
+    &:before, &:after {
+      position: absolute;
+      display: block;
+      left: 0;
+      width: 100%;
+      height: $bar-thickness;
+      border-radius: $bar-thickness/2;
+      content: "";
+    }
+
+  }
+}
+
+.cmn-toggle-switch--header {
+  width: $header-height-mobile;
+  height: $header-height-mobile;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  span {
+    display: block;
+    position: absolute;
+    top: ($button-height / 2) - ( $bar-thickness / 2);
+    left: ($button-width / 2) - ( $cross-width / 2);
+    right: ($button-width / 2) - ( $cross-width / 2);
+
+    &:before, &:after {
+      background-color: $color-brand-6; 
+    }
+  }
+
+  &.active {
+    background: $color-brand-6;
+
+    span {
+      background: $color-brand-3;
+
+      &:before, &:after {
+        background: $color-brand-3;
+      }
+    }
+  }
+}
+
+.cmn-toggle-switch span::before {
+  top: -(($cross-height / 2) - ($bar-thickness / 2));
+}
+
+.cmn-toggle-switch span::after {
+  bottom: -(($cross-height / 2) - ($bar-thickness / 2));
+}
+
+.cmn-toggle-switch__htx {
+  background: transparent;
+}
+
+.cmn-toggle-switch__htx span {
+  transition: background 0s $button-trans-delay;
+}
+
+.cmn-toggle-switch__htx span::before,
+.cmn-toggle-switch__htx span::after {
+  //transition-duration: $button-trans-delay, $button-trans-delay;
+  //transition-delay: $button-trans-delay, 0s;
+}
+
+.cmn-toggle-switch__htx span::before {
+  transition: top $button-trans-delay ease $button-trans-delay, transform $button-trans-delay ease 0s;
+  //transition-property: top, transform;
+}
+
+.cmn-toggle-switch__htx span::after {
+  transition: bottom $button-trans-delay ease $button-trans-delay, transform $button-trans-delay ease 0s;
+}
+
+/* active state, i.e. menu open */
+
+.cmn-toggle-switch__htx.active {
+
+  &:before {
+    background: red;
+  }
+}
+
+.cmn-toggle-switch__htx.active span {
+  background: none;
+  transition: background $button-trans-delay 0s; 
+}
+
+.cmn-toggle-switch__htx.active span::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.cmn-toggle-switch__htx.active span::after {
+  bottom: 0;
+  transform: rotate(-45deg);
+}
+
+.cmn-toggle-switch__htx.active span::before
+{
+  transition: top $button-trans-delay ease 0s, transform $button-trans-delay ease $button-trans-delay;
+}
+
+.cmn-toggle-switch__htx.active span::after {
+  transition: bottom $button-trans-delay ease 0s, transform $button-trans-delay ease $button-trans-delay;
+}
+
+@media (min-width: $screen-sm-min) {
+    .cmn-toggle-switch {
+      display: none;
+    }
+  
+}

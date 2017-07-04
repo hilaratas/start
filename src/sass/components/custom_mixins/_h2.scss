@@ -1,0 +1,24 @@
+@mixin h2 () { 
+	font-size: $font-size-h2;
+	font-family: $font-family;
+	font-weight: $font-normal;
+	line-height: $line-height-h2;
+	color: $color-brand-1;
+	margin-top: $h2-indent-top;
+	margin-bottom: $h2-indent-bottom;
+	text-align: left;
+
+	&:first-child {
+		margin-top: 0; 
+	}
+
+	@media (max-width: $screen-sm-max) {
+		font-size: $font-size-h2-sm;
+		line-height: $line-height-h2-sm;
+	}
+
+	@media (max-width: $screen-xs-max) {
+		font-size: $font-size-h2-xs;
+		line-height: $line-height-h2-xs;
+	}
+}

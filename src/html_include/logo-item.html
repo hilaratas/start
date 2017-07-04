@@ -1,0 +1,25 @@
+@@if (link == "") {
+	<div class="logo-item">
+	    <div class="logo-item__img-wrapper">
+	        <img src="@@img" alt='Visa' class="logo-item__img">
+	    </div>
+	    @@if (text !== "") {
+		    <div class="logo-item__title">
+		    	@@text
+		    </div>
+	    }
+	</div>
+}
+
+@@if (link !== "") {
+	<a class="logo-item logo-item--link" href="@@link" target="_blank" rel="nofollow">
+	    <div class="logo-item__img-wrapper">
+	        <img src="@@img" alt='Visa' class="logo-item__img">
+	    </div>
+	    @@if (text !== "") {
+		    <div class="logo-item__title">
+		    	@@text
+		    </div>
+	    }
+	</a>
+}

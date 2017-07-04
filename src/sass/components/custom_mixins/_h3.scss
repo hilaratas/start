@@ -1,0 +1,22 @@
+@mixin h3 () { 
+	font-size: $font-size-h3;
+	font-weight: $font-medium;
+	line-height: $line-height-h3;
+	color: $color-brand-1;
+	margin: $h3-indent-top 0 $h3-indent-bottom 0;
+	text-align: left;
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	@media (max-width: $screen-sm-max) {
+		font-size: $font-size-h3-sm;
+		line-height: $line-height-h3-sm;
+	}
+
+	@media (max-width: $screen-xs-max) {
+		font-size: $font-size-h3-xs;
+		line-height: $line-height-h3-xs;
+	}
+}

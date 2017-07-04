@@ -1,0 +1,103 @@
+.select {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: calc(50% - 7px);
+        right: 12px;
+        width: 9px;
+        height: 9px;
+        border-left: $border-width solid $color-brand-1;
+        border-bottom: $border-width solid $color-brand-1;
+        transform: rotate(-45deg);
+        pointer-events: none;   
+    }
+
+    select {
+        width: 100%;
+        display: block;
+        font-size: $form-el-font-size;
+        padding: $form-el-padding-vert 31px $form-el-padding-vert $form-el-padding-hor;
+        line-height: $form-el-line-height;
+        height: $form-el-height;
+        border: $form-el-border solid $input-color-border;
+        border-radius: $border-radius;
+        background: transparent;
+        color: black;
+        outline: none;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        @include no-appearance;
+        @include no-user-select;
+        cursor: pointer;
+        
+        transition: border .6s;
+        background: $color-brand-6;
+    }
+
+    &--small {
+        select {
+           font-size: $form-el-small-font-size;
+            line-height: $form-el-small-line-height;
+            padding: $form-el-small-padding-vert $form-el-small-padding-hor;
+            height: $form-el-small-height; 
+        }   
+    }
+
+    &--big {
+        select {
+            font-size: $form-el-big-font-size;
+            line-height: $form-el-big-line-height;
+            padding: $form-el-big-padding-vert $form-el-big-padding-hor;
+            height: $form-el-big-height;
+        }
+        
+    }
+
+    select {
+        &:focus {
+            outline: none;
+
+            &::-ms-value {
+                background-color: transparent;
+                color: #7c7c7c;
+            }
+        }
+
+        &:disabled {
+            opacity: .4;
+            cursor: default;
+        }
+
+        &.error {
+            border-color: $brand-warning;
+        }
+
+        &.valid {
+            border-color: $input-color-border-valid;
+        }
+
+        &:-moz-focusring {
+            color: transparent;
+            text-shadow: 0 0 0 #000;
+        }
+
+        &::-ms-expand {
+            display: none;
+        }
+
+        option {
+            color: $color-brand-1;
+
+            &:disabled {
+                color: $grey-brand-1;
+
+            }
+        }
+    }
+}

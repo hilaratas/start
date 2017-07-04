@@ -1,0 +1,108 @@
+.input,
+.textarea {
+    width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 10px 13px;
+    line-height: $form-el-line-height;
+    height: $form-el-height;
+	font-size: $form-el-font-size;
+    border-radius: $border-radius;
+    border: $form-el-border solid $input-color-border;
+    box-shadow: none;
+    background: #fff;
+    color: $color-brand-1;
+
+    @include no-appearance;
+    @include text-ellipsis;
+
+    overflow: hidden;
+    transition: border-color 0.5s;
+
+    &:focus {
+        outline: none;
+        box-shadow: none;
+
+        &::-webkit-input-placeholder {
+            opacity: 0;
+        }
+
+        &::-moz-placeholder {
+            opacity: 0;
+        }
+
+        &:-ms-input-placeholder {
+            opacity: 0;
+        }
+    }
+
+    &.error {
+        border-color: $brand-warning;
+		
+        &:focus {
+            border-color: $brand-warning;
+        }
+    }
+
+    &.valid {
+        border-color: $input-color-border-valid;
+    }
+
+    &:disabled {
+        opacity: 0.4;
+    }
+
+    &::-ms-clear {
+        display: none;
+    }
+
+    &::-webkit-input-placeholder {
+        color: $form-el-placeholder-color;
+        opacity: 1;
+        transition: opacity 0.2s ease;
+    }
+
+    &::-moz-placeholder {
+        color: $form-el-placeholder-color;
+        opacity: 1;
+        transition: opacity 0.2s ease;
+    }
+
+    &:-ms-input-placeholder {
+        color: $form-el-placeholder-color;
+        opacity: 1;
+        transition: opacity 0.2s ease;
+    }
+
+    &--no-ellipsis {
+       text-overflow: clip; 
+    }
+
+    &--small {
+        font-size: $form-el-small-font-size;
+        line-height: $form-el-small-line-height;
+        padding: $form-el-small-padding-vert $form-el-small-padding-hor;
+        height: $form-el-small-height;
+    }
+    
+    &--big {
+        font-size: $form-el-big-font-size;
+        line-height: $form-el-big-line-height;
+        padding: $form-el-big-padding-vert $form-el-big-padding-hor;
+        height: $form-el-big-height;
+    }
+
+    &--fill {
+        background-color: #f9f8f8;
+    }
+
+    &--short {
+        width: 120px;
+    }
+}
+
+.textarea {
+    max-height: 350px;
+    min-height: 60px;
+    max-width: 100%;
+}

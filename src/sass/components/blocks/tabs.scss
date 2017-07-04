@@ -1,0 +1,41 @@
+.tabs {
+
+   &__page {
+      transition: opacity .6s;
+      @include clearfix();
+
+      &--show {
+         height: auto;
+         opacity: 1;
+      }
+
+      &--hide {
+         height: 0;
+         opacity: 0;
+         overflow: hidden;
+      }
+   }
+
+   &__menu {
+      margin-top: -21px;
+      margin-bottom: 20px;
+   }
+
+   &__line {
+      margin-bottom: 1.5rem;
+   }
+
+   &__count {
+      padding-top: $form-el-padding-vert + $form-el-border;
+      line-height: $form-el-line-height;
+      color: $grey-brand-1;
+      font-weight: $font-medium;
+      text-align: right;
+   }
+
+   @media (max-width: $screen-xs-max) {
+      &__count {
+         text-align: left;
+      }
+   }
+}

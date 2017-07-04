@@ -1,0 +1,138 @@
+// $type - close, up, down, left, right
+@mixin round ( $size, $border-weight, $color, $color-hover ) {
+	display: block; width: $size; height: $size;  margin: 0; border: $border-weight solid $color; border-radius: 50%; 
+	padding: 0; -webkit-tap-highlight-color: transparent; 
+	
+	&:hover { border-color: $color-hover; }
+} 
+  
+@mixin arrow-top ( $size, $border-weight,  $arrow-size, $arrow-weight, $color, $color-hover ){
+	@include round( $size, $border-weight, $color, $color-hover );
+	
+	&:before {
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-top: -($arrow-size/2 - $arrow-weight/2);
+		margin-left: -($arrow-size/2); 
+		width: $arrow-size;
+		height: $arrow-size;
+		border-top: $arrow-weight solid $color; 
+		border-left: $arrow-weight solid $color;
+		transform: rotate( 45deg );
+	}
+	
+	&:hover {
+		border-top-color: $color-hover;
+		border-left-color: $color-hover;
+	}
+}
+
+@mixin arrow-top2 ( $arrow-size, $arrow-weight, $color, $color-hover ){
+	
+	&:before {
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-top: -($arrow-size/2 - $arrow-weight/2);
+		margin-left: -($arrow-size/2); 
+		width: $arrow-size;
+		height: $arrow-size;
+		border-top: $arrow-weight solid $color; 
+		border-left: $arrow-weight solid $color;
+		transform: rotate( 45deg );
+	}
+	
+	&:hover {
+		border-top-color: $color-hover;
+		border-left-color: $color-hover;
+	}
+}
+
+@mixin arrow-bottom ( $size, $border-weight,  $arrow-size, $arrow-weight, $color, $color-hover ){
+	@include round( $size, $border-weight, $color, $color-hover );
+	
+	&:before {
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-top: -($arrow-size/2 + $arrow-weight/2);
+		margin-left: -($arrow-size/2 ); 
+		width: $arrow-size;
+		height: $arrow-size;
+		border-top: $arrow-weight solid $color; 
+		border-left: $arrow-weight solid $color;
+		transform: rotate( 225deg );
+	}
+	
+	&:hover {
+		border-top-color: $color-hover;
+		border-left-color: $color-hover;
+	}
+}
+
+@mixin arrow-bottom2 ( $arrow-size, $arrow-weight, $color, $color-hover ){	
+	&:before {
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-top: -($arrow-size/2 + $arrow-weight/2);
+		margin-left: -($arrow-size/2 ); 
+		width: $arrow-size;
+		height: $arrow-size;
+		border-top: $arrow-weight solid $color; 
+		border-left: $arrow-weight solid $color;
+		transform: rotate( 225deg );
+	}
+	
+	&:hover {
+		border-top-color: $color-hover;
+		border-left-color: $color-hover;
+	}
+}
+
+@mixin arrow-left ($arrow-size, $arrow-weight, $color, $color-hover){
+	&:before {
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-top: -($arrow-size/2);
+		margin-left: -($arrow-size/2 - $arrow-weight); 
+		width: $arrow-size;
+		height: $arrow-size;
+		border-top: $arrow-weight solid $color; 
+		border-left: $arrow-weight solid $color;
+		transform: rotate( -45deg );
+	}
+	
+	&:hover {
+		border-top-color: $color-hover;
+		border-left-color: $color-hover;
+	}
+}
+
+@mixin arrow-right ($arrow-size, $arrow-weight, $color, $color-hover){
+	&:before {
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-top: -($arrow-size/2);
+		margin-left: -($arrow-size/2 + $arrow-weight); 
+		width: $arrow-size;
+		height: $arrow-size;
+		border-top: $arrow-weight solid $color; 
+		border-left: $arrow-weight solid $color;
+		transform: rotate( 135deg );
+	}
+	
+	&:hover {
+		border-top-color: $color-hover;
+		border-left-color: $color-hover;
+	}
+}

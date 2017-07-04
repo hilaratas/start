@@ -1,0 +1,146 @@
+.button {
+    display: inline-block;
+    vertical-align: middle;
+    height: $form-el-height;
+    margin: 0;
+    padding: $form-el-padding-vert $form-el-padding-hor;
+    border: $form-el-border solid $button-bg;
+    border-radius: $border-radius;
+    font-weight: $font-normal;
+    font-size: $form-el-font-size;
+    line-height: $form-el-line-height;
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: 0.6px;
+    background: $button-bg;
+    color: $color-brand-6;
+    box-shadow: none;
+    outline: none;
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    @include no-appearance();
+    user-select: none;
+    transition: $transition-duration;
+	text-decoration: none;
+	
+    &:hover {
+        text-decoration: none;
+        color: #fff;
+        background: $button-bg-hover;
+        border-color: $button-border-hover;
+    }
+
+    &--no-fill {
+        background: transparent;
+        color: $color-brand-4;
+        border-color: $input-color-border;
+
+        &:hover {
+            background: lighten($grey-brand-2, 20%);
+            border-color: $input-color-border;
+            color: $color-brand-4;
+        }
+
+    }
+
+    &--red{
+	    background: $button-bg2;
+	    border-color: $button-bg2;
+	    
+	    &:hover {
+            background: $button-bg2-hover;
+            border-color: $button-bg2-hover;
+        }
+
+    }
+
+    &--gray {
+        text-transform: uppercase;
+        color: #505050;
+        background: #d9d9d9;
+        border: none;
+        width: 130px;
+
+        &:hover {
+            background: lighten($grey-brand-2, 20%);
+            border-color: $grey-brand-2;
+            color: $color-brand-4;
+        }
+    }
+
+    &--isLoading {
+        position: relative;
+        pointer-events: none;
+        cursor: default;
+        color: transparent;
+        opacity: 0.8;
+
+        &:hover {
+            background: $button-bg;
+            border-color: $button-bg;
+            color: transparent;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: calc(50% - 11px);
+            left: calc(50% - 11px);
+            width: 22px;
+            height: 22px;
+            border-left: 3px solid transparent;
+            border-right: 3px solid #fff;
+            border-bottom: 3px solid #fff;
+            border-top: 3px solid transparent;
+            border-radius: 50%;
+            animation: button-loading 600ms infinite linear;
+        }
+
+        &.button--no-fill {
+            &:hover {
+                background: transparent;
+            }
+
+            &::after {
+                border-color: $button-bg;
+                border-top-color: transparent;
+                border-left-color: transparent;
+            }
+        }
+    }
+	
+    &--small {
+        font-size: $form-el-small-font-size;
+        line-height: $form-el-small-line-height;
+        padding: $form-el-small-padding-vert $form-el-small-padding-hor;
+        height: $form-el-small-height;
+    }
+	
+    &--big {
+        font-size: $form-el-big-font-size;
+        line-height: $form-el-big-line-height;
+        padding: $form-el-big-padding-vert $form-el-big-padding-hor;
+        height: $form-el-big-height;
+    }
+
+    &--fw{
+	    width: 100%;
+    }
+    
+    &__icon{
+		margin-bottom: -1px;
+	    margin-right: 8px;
+    }
+}
+
+@keyframes button-loading {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(359deg);
+    }
+}

@@ -1,0 +1,47 @@
+.list {
+
+	margin: 1rem 0;
+	padding: 0;
+
+
+	&__item {
+		position: relative;
+		margin-top: 15px;
+
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+
+	&__link {
+		color: $color-brand-1;
+		text-decoration: none;
+		position: relative;
+
+		&--arrow-right {
+			&:before {
+				position: absolute;
+				top: 0;
+				left: -35px;
+				content: ">";
+				display: block;
+				color: $grey-brand-1;
+				width: 20px;
+				height: 20px;
+				text-align: center;
+				border-radius: $border-radius; 
+				line-height: 20px;
+				font-weight: bold;
+				background: $grey-brand-1;
+			}
+		}
+
+		&:hover {
+			color: $color-brand-2;
+		}
+	}
+	
+	& & {
+		margin: 1.5rem 0 2rem 30px;
+	}
+}

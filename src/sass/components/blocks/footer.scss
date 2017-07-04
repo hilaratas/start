@@ -1,0 +1,26 @@
+.footer {
+	width: 100%;
+	margin: 0 auto;
+
+	&__wrapper {
+		padding: 0 10px;
+		background-image: linear-gradient(to right, #1c709c 0%, #0D51B3 100%);
+	}
+
+
+	&__inner {
+		max-width: 1140px;
+		width: 100%;
+		margin: 0 auto;
+	}
+
+	&__slider-holder {
+		display: block;
+		width: 100%;
+	}
+
+	@media (max-width: $screen-xs-max) {
+		padding-top: 60px;
+	}
+
+}

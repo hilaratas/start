@@ -1,0 +1,50 @@
+.section {
+
+	&__header {
+		padding-top: 20px;
+		padding-bottom: 20px;
+		background: $grey-brand-1;
+
+		&-cabinet {
+			background: url('../img/cabinet-bg.jpg') 80% no-repeat;
+			background-size: cover;
+		}
+
+		&-property {
+			background: url('../img/property-bg.jpg') 80% no-repeat;
+			background-size: cover;
+		}
+
+		&-order {
+			background: url('../img/order-bg.jpg') 60% no-repeat;
+			background-size: cover;
+		}
+	}
+
+	&__inner {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding-left: $padding-base;  
+		padding-right: $padding-base;  
+	}
+
+	&__main-content {
+		padding-top: 40px;
+	}
+
+	&__footer-questions {
+		border-top: $border-gray;
+	}
+
+	@media (max-width: $screen-xs-max) {
+		&__inner {
+			//margin: 0 -5px;
+			padding: 0;
+		}
+
+		&__inner2 {
+			margin: 0;
+			padding: 0 10px;
+		}
+	}
+}

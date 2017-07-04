@@ -1,0 +1,42 @@
+.title {
+
+	&--h1 {
+		@include h1();
+	}
+
+	&--h2 {
+	@include h2();
+	}
+
+	&--h3 {
+		@include h3();
+	}
+
+	&--h4 {
+		@include h4();
+	}
+
+	&--h5 {
+		@include h5();
+	}
+
+	&--h6 {
+		@include h6();
+	}
+
+	&--main {
+		color: #fff;
+		font-weight: $font-bold;
+	}
+
+	&--bottom-no {
+		margin-bottom: 0;
+		padding-bottom: 0;
+	}
+
+	&--underlined {
+		border-bottom: 1px solid #000;
+		padding-bottom: 15px;
+	}
+
+}

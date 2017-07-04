@@ -1,0 +1,22 @@
+@mixin h4 () { 
+	font-size: $font-size-h4;
+	font-weight: $font-bold;
+	line-height: $line-height-h4;
+	color: $color-brand-1;
+	margin: $h4-indent-top 0 $h4-indent-bottom 0;
+	text-align: left;
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	@media (max-width: $screen-sm-max) {
+		font-size: $font-size-h4-sm;
+		line-height: $line-height-h4-sm;
+	}
+
+	@media (max-width: $screen-xs-max) {
+		font-size: $font-size-h4-xs;
+		line-height: $line-height-h4-xs;
+	}
+}

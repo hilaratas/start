@@ -1,0 +1,305 @@
+// DIMENSIONS: WIDTHS, HEIGHTS
+//$app-max-width: 1440px;
+//$app-min-width: 1110px;
+$padding-base: 15px;
+
+// Fonts: Base styles
+$font-size: 16px;
+$font-family: Raleway, Arial, sans-serif;
+$font-size-base: 1rem; // 16px
+$font-size-small: 0.86rem; // 13px
+$font-size-extra-small: 0.8rem; //12px
+$font-size-extra-small2: 0.73rem; //11px
+$line-height-base: 1.25rem; // 20px
+$line-height-ratio: 1.25;
+
+// Fonts: Weights
+$font-light: 300;
+$font-normal: 400;
+$font-medium: 500;
+$font-bold: 700;
+
+// FONT-SIZE
+$font-size-h1: 5rem; // 80px
+$font-size-h2: 3.5rem; //56px
+$font-size-h3: 2.1875rem;  // 35px
+$font-size-h4: 1.5rem; // 24px
+$font-size-h5: 1.125rem; // 18px
+$font-size-h6: 1rem; // 16px
+
+$font-size-h1-sm: 2.5rem; 
+$font-size-h2-sm: 1.75rem; 
+$font-size-h3-sm: 1.6rem;
+$font-size-h4-sm: 1.35rem; //21px
+$font-size-h5-sm: 1.15rem;
+$font-size-h6-sm: 0.93rem; // 14px
+
+$font-size-h1-xs: 1.9rem;
+$font-size-h2-xs: 1.75rem;
+$font-size-h3-xs: 1.6rem;
+$font-size-h4-xs: 1.35rem;
+$font-size-h5-xs: 1.15rem;
+$font-size-h6-xs: 0.93rem;
+
+// LINE-HEIGHT
+// ДЕСКТОП
+$line-height-h1: 5rem;
+$line-height-h2: 3.0rem;
+$line-height-h3: 2.1875rem;
+$line-height-h4: 1.8rem;
+$line-height-h5: 1.5rem;
+$line-height-h6: 1.4rem;
+
+$line-height-h1-ratio: 3.2;
+$line-height-h2-ratio: 2.8;
+$line-height-h3-ratio: 2.5;
+$line-height-h4-ratio: 1.6;
+$line-height-h5-ratio: 1.5;
+$line-height-h6-ratio: 1.3;
+
+// ПЛАНШЕТ
+$line-height-h1-sm: 2.5rem;
+$line-height-h2-sm: 1.9rem;
+$line-height-h3-sm: 1.7rem;
+$line-height-h4-sm: 1.6rem;
+$line-height-h5-sm: 1.3rem;
+$line-height-h6-sm: 1.3rem;
+
+$line-height-h1-sm-ratio: 2.1;
+$line-height-h2-sm-ratio: 1.9;
+$line-height-h3-sm-ratio: 1.7;
+$line-height-h4-sm-ratio: 1.6;
+$line-height-h5-sm-ratio: 1.3;
+$line-height-h6-sm-ratio: 1.3;
+
+// ТЕЛЕФОН
+$line-height-h1-xs: 2.1rem;
+$line-height-h2-xs: 1.9rem;
+$line-height-h3-xs: 1.7rem;
+$line-height-h4-xs: 1.6rem;
+$line-height-h5-xs: 1.3rem;
+$line-height-h6-xs: 1.3rem;
+
+$line-height-h1-xs-ratio: 2.1;
+$line-height-h2-xs-ratio: 1.9;
+$line-height-h3-xs-ratio: 1.7;
+$line-height-h4-xs-ratio: 1.6;
+$line-height-h5-xs-ratio: 1.3;
+$line-height-h6-xs-ratio: 1.3;
+
+$h1-indent-top: 25px;
+$h1-indent-bottom: 15px;
+$h2-indent-top: 40px;
+$h2-indent-bottom: 27px;
+$h3-indent-top: 22px;
+$h3-indent-bottom: 17px;
+$h4-indent-top: 22px;
+$h4-indent-bottom: 15px;
+$h5-indent-top: 15px;
+$h5-indent-bottom: 10px;
+$h6-indent-top: 15px;
+$h6-indent-bottom: 10px;
+
+
+
+// Colors: Brand
+$color-brand-1: #030303;
+$color-brand-2: #2a67c7;
+$color-brand-3: #0d51b3;  //используется
+$color-brand-4: #556787; // используется. Не переопределять
+$color-brand-5: #1d3456;
+$color-brand-6: #fff;
+
+
+$color-brand-100: #1d3456;
+
+// GREY COLORS
+$grey-brand-1: #2d3142;
+$grey-brand-2: #bcbcbc;
+$grey-brand-3: #d6d6d6;
+
+
+
+$red-brand-1: #ea4c3a;
+$red-brand-2: #b32123;
+$green-brand-1: #097b00;
+
+
+$color-error: $red-brand-1;
+
+$border-radius: 3px;
+$border-width: 1px;
+$border-gray: 1px solid $grey-brand-3;
+$border-transparent: 1px solid transparent;
+
+$table-cell-padding: 13px !default;
+$table-border-color: $grey-brand-2 !default;
+
+
+$brand-warning: $red-brand-1;
+
+$header-height-mobile: 80px;
+$header-height-desktop: 85px; 
+
+$color-bg: #f4f4f4;
+$color-icon: #9ab9c9;
+
+// Colors: Headings
+$headings-color: #252b33;
+
+// Colors: Links
+$color-link: $color-brand-1;
+$color-link-hover: $color-link;
+
+// Colors: Body Background
+$color-body-bg: #fff;
+
+
+// box-shadow
+
+$box-shadow: 0px 0px 7px 0px rgba(135, 135, 135, 0.55);
+
+
+// Transition
+$transition-duration: 0.4s;
+
+
+// SOCIAL COLORS
+$vkontakte-color: #587a9f;
+$facebook-color: #496194;
+$twitter-color: #53a8e9;
+$instagram-color: #004879;
+$odnoklassniki-color: #f58220;
+$google-plus-color: #dc4436;
+$mail-color: #168de2;
+$moimir-color: #168de2;
+$livejournal-color: #09C;
+
+// FORM ELEMENTS
+$form-el-font-size: $font-size-base;
+$form-el-line-height: $font-size-base*$line-height-ratio;
+$form-el-padding-vert: 7px;
+$form-el-padding-hor: 16px;
+$form-el-border: $border-width;
+$form-el-height: calc( #{$form-el-line-height} +  #{2 * $form-el-padding-vert} + #{2 * $form-el-border} );
+$form-el-placeholder-color: $color-brand-1;
+
+$form-el-big-font-size: 27px;
+$form-el-big-line-height: $form-el-big-font-size*$line-height-ratio;
+$form-el-big-padding-vert: 5px;
+$form-el-big-padding-hor: 20px;
+$form-el-big-border: $border-width;
+$form-el-big-height: calc( #{$form-el-big-line-height} +  #{2 * $form-el-big-padding-vert} + #{2 * $form-el-big-border} );
+
+$form-el-small-font-size: 14px;
+$form-el-small-line-height: $form-el-small-font-size*$line-height-ratio;
+$form-el-small-padding-vert: 2px;
+$form-el-small-padding-hor: 10px;
+$form-el-small-border: $border-width;
+$form-el-small-height: calc( #{$form-el-small-line-height} +  #{2 * $form-el-small-padding-vert} + #{2 * $form-el-small-border} );
+
+// Buttons
+$button-bg: $color-brand-3;
+$button-bg-hover: darken($color-brand-3, 5%);
+$button-border-hover: darken($color-brand-3, 10%);
+
+// RED BUTTON
+$button-bg2: $red-brand-1;
+$button-bg2-hover: $red-brand-1;
+
+//INPUTS
+$input-color-border: $grey-brand-3;
+$input-color-border-focus: $color-brand-2;
+$input-color-border-valid: $color-brand-2;
+$input-color-border-invalid: $brand-warning;
+
+// RADIO
+$radio-color: $color-brand-3;
+$radio-color-border: $grey-brand-3;
+
+// CHECKBOX
+$checkbox-color: $color-brand-3;
+$checkbox-color-border: $grey-brand-3;
+
+
+
+// MAIN MENU
+$main-menu-hover-bg: $grey-brand-3;
+
+
+//== Media queries breakpoints
+//
+//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
+
+// Extra small screen / phone
+//** Deprecated `$screen-xs` as of v3.0.1
+$screen-xs:                  480px !default;
+//** Deprecated `$screen-xs-min` as of v3.2.0
+$screen-xs-min:              $screen-xs !default;
+//** Deprecated `$screen-phone` as of v3.0.1
+$screen-phone:               $screen-xs-min !default;
+
+// Small screen / tablet
+//** Deprecated `$screen-sm` as of v3.0.1
+$screen-sm:                  768px !default;
+$screen-sm-min:              $screen-sm !default;
+//** Deprecated `$screen-tablet` as of v3.0.1
+$screen-tablet:              $screen-sm-min !default;
+
+// Medium screen / desktop
+//** Deprecated `$screen-md` as of v3.0.1
+$screen-md:                  1025px !default;
+$screen-md-min:              $screen-md !default;
+//** Deprecated `$screen-desktop` as of v3.0.1
+$screen-desktop:             $screen-md-min !default;
+
+// Large screen / wide desktop
+//** Deprecated `$screen-lg` as of v3.0.1
+$screen-lg:                  1200px !default;
+$screen-lg-min:              $screen-lg !default;
+//** Deprecated `$screen-lg-desktop` as of v3.0.1
+$screen-lg-desktop:          $screen-lg-min !default;
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xs-max:              ($screen-sm-min - 1) !default;
+$screen-sm-max:              ($screen-md-min - 1) !default;
+$screen-md-max:              ($screen-lg-min - 1) !default;
+
+
+$mobile: 767px;
+$tablet: 1024px;
+
+
+//== Grid system
+//
+//## Define your custom responsive grid.
+
+//** Number of columns in the grid.
+$grid-columns:              12 !default;
+//** Padding between columns. Gets divided in half for the left and right.
+$grid-gutter-width:         30px !default;
+// Navbar collapse
+//** Point at which the navbar becomes uncollapsed.
+$grid-float-breakpoint:     $screen-sm-min !default;
+//** Point at which the navbar begins collapsing.
+$grid-float-breakpoint-max: ($grid-float-breakpoint - 1) !default;
+
+
+//== Container sizes
+//
+//## Define the maximum width of `.container` for different screen sizes.
+
+// Small screen / tablet
+$container-tablet:             (720px + $grid-gutter-width) !default;
+//** For `$screen-sm-min` and up.
+$container-sm:                 $container-tablet !default;
+
+// Medium screen / desktop
+$container-desktop:            (940px + $grid-gutter-width) !default;
+//** For `$screen-md-min` and up.
+$container-md:                 $container-desktop !default;
+
+// Large screen / wide desktop
+$container-large-desktop:      (1140px + $grid-gutter-width) !default;
+//** For `$screen-lg-min` and up.
+$container-lg:                 $container-large-desktop !default;

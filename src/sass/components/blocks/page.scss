@@ -1,0 +1,51 @@
+.page {
+
+    font-family: $font-family;
+    font-size: $font-size-base;
+    font-weight: $font-normal;
+    line-height: $line-height-base;
+    color: $color-brand-1;
+    background-color: $color-body-bg;
+    height: 100%;
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    
+    &__wrapper {
+        height: 100%;
+    }
+    
+    &__middle {
+        display: table-row;
+        height: 100%;
+
+        &--bg1 {
+            background: url(../img/main-page-bg1.png) no-repeat;
+            background-position: center 58px;
+        }
+
+        &--bg2 {
+            background: url(../img/main-page-bg2.jpg) no-repeat;
+            background-position: top right;
+        }
+        &--margin{
+	        margin: 3rem 0;
+	        display: block;
+	        height: auto;
+        }
+
+        .blind &--bg1, .blind &--bg2 {
+            background-image: none;
+        }
+    }
+    
+    &__header {
+        display: table-row;
+        height: 1px; 
+    }
+    
+    &__footer {
+        display: table-row;
+        height: 1px;
+    }
+}

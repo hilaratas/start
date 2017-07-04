@@ -1,0 +1,140 @@
+.header {
+	background: #0d51b3;
+	padding: 20px 0;
+	position: relative;
+	z-index: 900;
+	font-family: 'Raleway', sans-serif;
+
+	&__text {
+		font-size: 22px;
+		color: #fff;
+		font-weight: 600;
+		
+		&--green {
+			color: #32eb75;
+		}
+	}
+	
+	
+
+    &--white{
+	    background: $color-brand-6;
+    }
+    
+	&__inner {
+		height: 100%;
+		margin: 0 auto;
+	}
+
+	&__top-left {
+		display: inline-block;
+		vertical-align: middle;
+
+		@media (max-width: 580px) {
+			.slogan {
+				display: none;
+			}
+		}
+
+
+
+	}
+
+	&__logo-wrapper {
+		display: inline-block;
+		vertical-align: middle;
+		text-transform: uppercase;
+
+		a {
+			text-decoration: none;
+		}
+
+		@media (max-width: $screen-md) {
+			display: block;
+		}
+
+	}
+
+	&__slogan {
+		margin-left: 20px;
+		display: inline-block;
+		vertical-align: middle;
+
+		@media (max-width: $screen-md) {
+			display: block;
+			margin-left: 0px;
+		}
+	}
+
+	.slogan {
+		color:#75a1df;
+		font-size: 15px;
+		opacity: 1;
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	&__gumburger {
+		width: $header-height-mobile;
+		height: $header-height-mobile;
+		position: absolute;
+		top: 0;
+		right: 0;
+		display: none;
+
+		@media (max-width: $screen-xs) {
+			display: block;
+		}
+
+	}
+
+	&__back {
+		width: 20px;
+		height: 20px;
+		position: absolute;
+		z-index: 100;
+		top: 50%;
+		transform: translateY(-50%);
+		left: 30px;
+		display: none;
+	}
+
+	&__top-right {
+		display: inline-block;
+		vertical-align: middle;
+		float: right;
+
+		@media (max-width: 580px) {
+			display: block;
+			margin-top: 20px;
+			float: none;
+		}
+	}
+
+	&-contacts {
+		display: inline-block;
+		vertical-align: middle;
+		margin-left: 25px;
+		font-size: 22px;
+
+		a {
+			text-decoration: none;
+			font-weight: 600;
+		}
+
+		@media (max-width: $screen-md) {
+			display: block;
+			margin-left: 0px;
+		}
+	}
+
+	&__menu-holder {
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+		position: absolute;
+		bottom: 0px;
+		left: 197px;
+		right: 320px;
+	}
+
+}

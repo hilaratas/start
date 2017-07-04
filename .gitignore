@@ -1,0 +1,11 @@
+/node_modules/
+/src/tmp/
+/.sass-cache/
+*.DS_Store
+*.rar
+*.zip
+*.log
+*.sublime-project
+*.sublime-workspace
+/.idea/
+/build/

@@ -1,0 +1,591 @@
+<div class="popups">
+
+   <div id="rules" class="popup">
+      <div class="popup__header">
+         <div class="popup__title">Правила использования</div>
+      </div>
+      <div class="typical">
+         <p>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Живет ipsum повстречался рекламных, он. Сбить решила сих алфавит, пояс, рыбными имени лучше текста ведущими использовало переписывается послушавшись буквоград что.</p>
+         <p>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. По всей имеет использовало она вопрос реторический речью образ жизни ее щеке продолжил коварный, ты, снова путь парадигматическая страну свою однажды пояс даль залетают, пунктуация предложения скатился своего, если несколько? Прямо домах, правилами инициал, оксмокс переулка повстречался, предложения языкового она возвращайся переписывается своих. Семантика рот он послушавшись единственное приставка над необходимыми то но вершину алфавит, рыбными семь, о, реторический составитель имени! Что коварный родного снова которое пустился грустный семантика щеке пунктуация переписывается своих себя над даже одна, текстов рекламных вершину подпоясал алфавит.</p>
+      </div>
+   </div>
+
+   <div id="offers-popup" class="popup">
+      <div class="popup__header">
+         <div class="popup__title">Предложения <br> и замечания <br> по работе сайта</div>
+      </div>
+      <form class="form  js-form" action="#send" method="get">
+         <div class="form__row  row">
+            <div class="form__col  col-sm-6">
+               <label class="form__description  form__description--required" for="name">ФИО</label>
+               <div class="form__field">
+                  <input id="name" name="name" type="text" required>
+               </div>
+            </div>
+            <div class="form__col  col-sm-6">
+               <label class="form__description  form__description--required" for="mail">E-mail</label>
+               <div class="form__field">
+                  <input id="mail" name="email" type="text" required>
+               </div>
+            </div>
+         </div>
+
+         <div class="form__row">
+            <label class="form__description  form__description--required" for="message">Сообщение</label>
+            <div class="form__field">
+               <textarea id="message" name="message" required></textarea>
+            </div>
+         </div>
+
+         <div class="form__row">
+            <div class="form__field">
+               <input type="file" name="file" data-browse="Прикрепить документ" multiple>
+            </div>
+         </div>
+
+         <div class="form__row  form__row--bordered">
+            <label class="form__description  form__description--required" for="captcha">Ведите код с картинки</label>
+            <div class="form__field">
+               <div class="form__captcha">
+                  <input type="text" id="captcha" name="captcha" required>
+                  <a href="#" class="form__captcha-image-wrap">
+                     <img src="img/captcha.jpg" height="34" width="163" alt="captcha">
+                  </a>
+               </div>
+            </div>
+            <div class="form__field">
+               <input name="confirm" type="checkbox" id="confirm" checked required>
+               <label for="confirm">Настоящим подтверждаю свое согласие на использование персональных данных <span class="required">*</span></label>
+            </div>
+         </div>
+
+         <div class="form__row">
+            <button class="btn  btn--fill" type="submit">Отправить сообщение</button>
+            <div class="form__required-label"><span class="required">*</span> — поля, обязательные для заполнения</div>
+         </div>
+      </form>
+   </div>
+
+
+   <div id="ask-popup" class="popup">
+      <div class="popup__header">
+         <div class="popup__title">Обратная связь</div>
+      </div>
+      <form class="form  js-form" method="get" action="form.php">
+         <div class="form__row">
+            <label class="form__description  form__description--required" for="name">ФИО</label>
+            <div class="form__field">
+               <input id="name" name="name" type="text" required>
+            </div>
+         </div>
+
+         <div class="form__row">
+            <label class="form__description  form__description--required" for="tabs-type-1">Выберите способ получения ответа</label>
+            <div class="form__tabs  js-form-tabs">
+               <ul class="form__inputs-list">
+                  <li class="form__inputs-list-item">
+                     <input class="form__tabs-btn" name="tabs" type="radio" id="tabs-type-1" checked>
+                     <label for="tabs-type-1">По почтовому адресу</label>
+                  </li>
+                  <li class="form__inputs-list-item">
+                     <input class="form__tabs-btn" name="tabs" type="radio" id="tabs-type-2">
+                     <label for="tabs-type-2">По электронной почте</label>
+                  </li>
+               </ul>
+               <div class="form__tabs-pages">
+                  <div class="form__tabs-page  tabs-type-1">
+                     <div class="form__row">
+                        <label class="form__description  form__description--required" for="index">Индекс</label>
+                        <div class="form__field">
+                           <input type="text" id="index" name="index" required>
+                        </div>
+                     </div>
+                     <div class="form__row">
+                        <label class="form__description  form__description--required" for="city">Населенный пункт</label>
+                        <div class="form__field">
+                           <input type="text" id="city" name="city" required>
+                        </div>
+                     </div>
+                     <div class="form__row">
+                        <label class="form__description  form__description--required" for="street">Улица</label>
+                        <div class="form__field">
+                           <input type="text" id="street" name="street" required>
+                        </div>
+                     </div>
+                     <div class="form__row">
+                        <label class="form__description  form__description--required" for="house">Дом</label>
+                        <div class="form__field">
+                           <input type="text" id="house" name="house" required>
+                        </div>
+                     </div>
+                     <div class="form__row">
+                        <label class="form__description" for="corp">Корпус</label>
+                        <div class="form__field">
+                           <input type="text" id="corp" name="corp">
+                        </div>
+                     </div>
+                     <div class="form__row">
+                        <label class="form__description  form__description--required" for="apartment">Квартира</label>
+                        <div class="form__field">
+                           <input type="text" id="apartment" name="apartment" required>
+                        </div>
+                     </div>
+                     <div class="form__row">
+                        <label class="form__description" for="email1">E-mail</label>
+                        <div class="form__field">
+                           <input type="email" id="email1" name="email">
+                        </div>
+                     </div>
+                  </div>
+                  <div class="form__tabs-page  tabs-type-2">
+                     <label class="form__description  form__description--required" for="email">E-mail</label>
+                     <div class="form__field">
+                        <input id="email" name="email" type="email" required>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <div class="form__row">
+            <label class="form__description  form__description--required" for="ask">Вопрос</label>
+            <div class="form__field">
+               <textarea id="ask" name="textarea" required></textarea>
+            </div>
+         </div>
+
+         <div class="form__row">
+            <div class="form__field">
+               <input type="file" name="file" data-browse="Прикрепить документ" multiple>
+            </div>
+         </div>
+
+         <div class="form__row  form__row--bordered">
+            <label class="form__description  form__description--required" for="captcha">Ведите код с картинки</label>
+            <div class="form__field">
+               <div class="form__captcha">
+                  <input type="text" id="captcha" name="captcha" required>
+                  <a href="#" class="form__captcha-image-wrap">
+                     <img src="img/captcha.jpg" height="34" width="163" alt="captcha">
+                  </a>
+               </div>
+            </div>
+            <div class="form__field">
+               <input name="confirm" type="checkbox" id="confirm" checked required>
+               <label for="confirm">Настоящим подтверждаю свое согласие на использование персональных данных <span class="required">*</span></label>
+            </div>
+         </div>
+
+         <div class="form__row">
+            <button class="btn  btn--fill" type="submit">Отправить сообщение</button>
+            <div class="form__required-label"><span class="required">*</span> — поля, обязательные для заполнения</div>
+         </div>
+      </form>
+   </div>
+
+
+   <div id="appointment-popup" class="popup">
+      <div class="popup__header">
+         <div class="popup__title">Запись на прием</div>
+         <div class="popup__description">Вы также можете записаться на приём по телефону <b>+7 (111) 111-11-11</b></div>
+      </div>
+      <form class="form  js-form" id="appointment-form" method="get" action="#send">
+         <div class="form__row">
+            <label class="form__description  form__description--required" for="name">ФИО</label>
+            <div class="form__field">
+               <input id="name" type="text" name="name" required>
+            </div>
+         </div>
+
+         <div class="form__row  row">
+            <div class="form__col  col-sm-6">
+               <label class="form__description  form__description--required" for="tel">Номер телефона</label>
+               <div class="form__field">
+                  <input id="tel" type="tel" name="tel" required>
+               </div>
+            </div>
+         </div>
+
+         <div class="form__row">
+            <label class="form__description  form__description--required" for="ask">Вопрос</label>
+            <div class="form__field">
+               <textarea id="ask" name="ask" required></textarea>
+            </div>
+         </div>
+
+         <div class="form__row  form__row--bordered">
+            <label class="form__description  form__description--required" for="captcha">Ведите код с картинки</label>
+            <div class="form__field">
+               <div class="form__captcha">
+                  <input type="text" id="captcha" name="captcha" required>
+                  <a href="#" class="form__captcha-image-wrap">
+                     <img src="img/captcha.jpg" height="34" width="163" alt="captcha">
+                  </a>
+               </div>
+            </div>
+            <div class="form__field">
+               <input name="confirm" type="checkbox" id="confirm" checked required>
+               <label for="confirm">Настоящим подтверждаю свое согласие на использование персональных данных <span class="required">*</span></label>
+            </div>
+         </div>
+
+         <div class="form__row">
+            <button class="btn  btn--fill" type="submit">Отправить сообщение</button>
+            <div class="form__required-label"><span class="required">*</span> — поля, обязательные для заполнения</div>
+         </div>
+      </form>
+   </div>
+
+
+   <div id="subscription-popup" class="popup">
+      <div class="popup__header">
+         <div class="popup__title">Подписка на новости</div>
+      </div>
+      <form class="form  js-form" id="subscription-form" method="get" action="#send">
+
+         <div class="form__row">
+            <label class="form__description  form__description--required" for="mail">E-mail</label>
+            <div class="form__field">
+               <input id="mail" name="email" type="email" required>
+            </div>
+            <a href="#">Изменить параметры рассылки</a>
+         </div>
+
+         <div class="form__row">
+            <label class="form__description  form__description--required" for="">Как часто Вы хотите получать рассылку?</label>
+            <div class="form__field">
+               <ul class="form__inputs-list  form__inputs-list--vertical">
+                  <li class="form__inputs-list-item">
+                     <input id="everyday" class="js-form-checkbox-accordion" name="checkboxes[]" type="checkbox" checked>
+                     <label for="everyday"><b>Ежедневно</b> - главные события дня</label>
+                     <ul class="form__inputs-list">
+                        <li class="form__inputs-list-item">
+                           <input name="everyday-news" type="checkbox" id="everyday-news">
+                           <label for="everyday-news">Новости</label>
+                        </li>
+                        <li class="form__inputs-list-item">
+                           <input name="everyday-photo" type="checkbox" id="everyday-photo">
+                           <label for="everyday-photo">Фото</label>
+                        </li>
+                        <li class="form__inputs-list-item">
+                           <input name="everyday-video" type="checkbox" id="everyday-video">
+                           <label for="everyday-video">Видео</label>
+                        </li>
+                     </ul>
+                  </li>
+                  <li class="form__inputs-list-item">
+                     <input id="everyweek" name="checkboxes[]" type="checkbox" checked>
+                     <label for="everyweek"><b>Еженедельно</b> - дайджест самых интересных событий за неделю</label>
+                  </li>
+               </ul>
+            </div>
+         </div>
+
+         <div class="form__row  form__row--bordered">
+            <label class="form__description  form__description--required" for="captcha">Ведите код с картинки</label>
+            <div class="form__field">
+               <div class="form__captcha">
+                  <input type="text" id="captcha" name="captcha" required>
+                  <a href="#" class="form__captcha-image-wrap">
+                     <img src="img/captcha.jpg" height="34" width="163" alt="captcha">
+                  </a>
+               </div>
+            </div>
+            <div class="form__field">
+               <input name="confirm" type="checkbox" id="confirm" checked required>
+               <label for="confirm">Настоящим подтверждаю свое согласие на использование персональных данных <span class="required">*</span></label>
+            </div>
+         </div>
+
+         <div class="form__row">
+            <button class="btn  btn--fill" type="submit">Отправить сообщение</button>
+            <div class="form__required-label"><span class="required">*</span> — поля, обязательные для заполнения</div>
+         </div>
+
+      </form>
+   </div>
+
+   <div id="subscription-ok-popup" class="popup">
+      <div class="popup__header">
+         <div class="popup__title">Поздравляем!</div>
+      </div>
+      <div class="typical">
+         <p>Вы подписались на новости. На вашу электронную почту выслано письмо со ссылкой для подтверждения подписки.</p>
+      </div>
+   </div>
+
+
+   <div id="authorities-popup" class="popup  popup--large">
+      <div class="popup__header">
+         <div class="popup__title">Органы власти</div>
+      </div>
+      <form class="form" action="#send" method="get">
+         <div class="form__scroll-wrap">
+            <div class="form__scroll-wrap-inner">
+               <div class="form__row  row">
+                  <div class="form__col  col-sm-6">
+                     <ul class="form__inputs-list  form__inputs-list--vertical">
+                        <li class="form__inputs-list-item">
+                           <input name="authorities-1" type="checkbox" id="authorities-1">
+                           <label for="authorities-1">Министерство государственного управления, информационных технологий и связи</label>
+                        </li>
+                        <li class="form__inputs-list-item">
+                           <input name="authorities-2" type="checkbox" id="authorities-2">
+                           <label for="authorities-2">Министерство государственного управления, информационных технологий и связи</label>
+                        </li>
+                        <li class="form__inputs-list-item">
+                           <input name="authorities-3" type="checkbox" id="authorities-3">
+                           <label for="authorities-3">Министерство государственного управления, информационных технологий и связи</label>
+                        </li>
+                        <li class="form__inputs-list-item">
+                           <input name="authorities-4" type="checkbox" id="authorities-4">
+                           <label for="authorities-4">Министерство государственного управления, информационных технологий и связи</label>
+                        </li>
+                        <li class="form__inputs-list-item">
+                           <input name="authorities-5" type="checkbox" id="authorities-5">
+                           <label for="authorities-5">Министерство государственного управления, информационных технологий и связи</label>
+                        </li>
+                        <li class="form__inputs-list-item">
+                           <input name="authorities-6" type="checkbox" id="authorities-6">
+                           <label for="authorities-6">Министерство государственного управления, информационных технологий и связи</label>
+                        </li>
+                        <li class="form__inputs-list-item">
+                           <input name="authorities-7" type="checkbox" id="authorities-7">
+                           <label for="authorities-7">Министерство государственного управления, информационных технологий и связи</label>
+                        </li>
+                        <li class="form__inputs-list-item">
+                           <input name="authorities-8" type="checkbox" id="authorities-8">
+                           <label for="authorities-8">Министерство государственного управления, информационных технологий и связи</label>
+                        </li>
+                        <li class="form__inputs-list-item">
+                           <input name="authorities-9" type="checkbox" id="authorities-9">
+                           <label for="authorities-9">Министерство государственного управления, информационных технологий и связи</label>
+                        </li>
+                        <li class="form__inputs-list-item">
+                           <input name="authorities-10" type="checkbox" id="authorities-10">
+                           <label for="authorities-10">Министерство государственного управления, информационных технологий и связи</label>
+                        </li>
+                        <li class="form__inputs-list-item">
+                           <input name="authorities-11" type="checkbox" id="authorities-11">
+                           <label for="authorities-11">Министерство государственного управления, информационных технологий и связи</label>
+                        </li>
+                        <li class="form__inputs-list-item">
+                           <input name="authorities-12" type="checkbox" id="authorities-12">
+                           <label for="authorities-12">Министерство государственного управления, информационных технологий и связи</label>
+                        </li>
+                        <li class="form__inputs-list-item">
+                           <input name="authorities-13" type="checkbox" id="authorities-13">
+                           <label for="authorities-13">Министерство государственного управления, информационных технологий и связи</label>
+                        </li>
+                        <li class="form__inputs-list-item">
+                           <input name="authorities-14" type="checkbox" id="authorities-14">
+                           <label for="authorities-14">Министерство государственного управления, информационных технологий и связи</label>
+                        </li>
+                     </ul>
+                  </div>
+
+                  <div class="form__col  col-sm-6">
+                     <ul class="form__inputs-list  form__inputs-list--vertical">
+                        <li class="form__inputs-list-item">
+                           <input name="authorities-1" type="checkbox" id="authorities-1">
+                           <label for="authorities-1">Министерство государственного управления, информационных технологий и связи</label>
+                        </li>
+                        <li class="form__inputs-list-item">
+                           <input name="authorities-2" type="checkbox" id="authorities-2">
+                           <label for="authorities-2">Министерство государственного управления, информационных технологий и связи</label>
+                        </li>
+                        <li class="form__inputs-list-item">
+                           <input name="authorities-3" type="checkbox" id="authorities-3">
+                           <label for="authorities-3">Министерство государственного управления, информационных технологий и связи</label>
+                        </li>
+                        <li class="form__inputs-list-item">
+                           <input name="authorities-4" type="checkbox" id="authorities-4">
+                           <label for="authorities-4">Министерство государственного управления, информационных технологий и связи</label>
+                        </li>
+                        <li class="form__inputs-list-item">
+                           <input name="authorities-5" type="checkbox" id="authorities-5">
+                           <label for="authorities-5">Министерство государственного управления, информационных технологий и связи</label>
+                        </li>
+                        <li class="form__inputs-list-item">
+                           <input name="authorities-6" type="checkbox" id="authorities-6">
+                           <label for="authorities-6">Министерство государственного управления, информационных технологий и связи</label>
+                        </li>
+                        <li class="form__inputs-list-item">
+                           <input name="authorities-7" type="checkbox" id="authorities-7">
+                           <label for="authorities-7">Министерство государственного управления, информационных технологий и связи</label>
+                        </li>
+                        <li class="form__inputs-list-item">
+                           <input name="authorities-8" type="checkbox" id="authorities-8">
+                           <label for="authorities-8">Министерство государственного управления, информационных технологий и связи</label>
+                        </li>
+                        <li class="form__inputs-list-item">
+                           <input name="authorities-9" type="checkbox" id="authorities-9">
+                           <label for="authorities-9">Министерство государственного управления, информационных технологий и связи</label>
+                        </li>
+                        <li class="form__inputs-list-item">
+                           <input name="authorities-10" type="checkbox" id="authorities-10">
+                           <label for="authorities-10">Министерство государственного управления, информационных технологий и связи</label>
+                        </li>
+                        <li class="form__inputs-list-item">
+                           <input name="authorities-11" type="checkbox" id="authorities-11">
+                           <label for="authorities-11">Министерство государственного управления, информационных технологий и связи</label>
+                        </li>
+                        <li class="form__inputs-list-item">
+                           <input name="authorities-12" type="checkbox" id="authorities-12">
+                           <label for="authorities-12">Министерство государственного управления, информационных технологий и связи</label>
+                        </li>
+                        <li class="form__inputs-list-item">
+                           <input name="authorities-13" type="checkbox" id="authorities-13">
+                           <label for="authorities-13">Министерство государственного управления, информационных технологий и связи</label>
+                        </li>
+                        <li class="form__inputs-list-item">
+                           <input name="authorities-14" type="checkbox" id="authorities-14">
+                           <label for="authorities-14">Министерство государственного управления, информационных технологий и связи</label>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <button type="submit" class="btn  btn--fill">Применить</button>
+         <button type="button" class="btn">Сбросить</button>
+      </form>
+   </div>
+
+   <div id="tags-popup" class="popup  popup--large">
+      <div class="popup__header">
+         <div class="popup__title">Популярные теги</div>
+      </div>
+      <form class="form" action="#send" method="get">
+         <div class="form__scroll-wrap">
+            <div class="form__scroll-wrap-inner">
+               <div class="form__row  row">
+                  <div class="form__col  col-sm-6">
+                     <ul class="form__inputs-list  form__inputs-list--vertical">
+                        <li class="form__inputs-list-item">
+                           <input name="authorities-1" type="checkbox" id="authorities-1">
+                           <label for="authorities-1">Министерство государственного управления, информационных технологий и связи</label>
+                        </li>
+                        <li class="form__inputs-list-item">
+                           <input name="authorities-2" type="checkbox" id="authorities-2">
+                           <label for="authorities-2">Министерство государственного управления, информационных технологий и связи</label>
+                        </li>
+                        <li class="form__inputs-list-item">
+                           <input name="authorities-3" type="checkbox" id="authorities-3">
+                           <label for="authorities-3">Министерство государственного управления, информационных технологий и связи</label>
+                        </li>
+                        <li class="form__inputs-list-item">
+                           <input name="authorities-4" type="checkbox" id="authorities-4">
+                           <label for="authorities-4">Министерство государственного управления, информационных технологий и связи</label>
+                        </li>
+                        <li class="form__inputs-list-item">
+                           <input name="authorities-5" type="checkbox" id="authorities-5">
+                           <label for="authorities-5">Министерство государственного управления, информационных технологий и связи</label>
+                        </li>
+                        <li class="form__inputs-list-item">
+                           <input name="authorities-6" type="checkbox" id="authorities-6">
+                           <label for="authorities-6">Министерство государственного управления, информационных технологий и связи</label>
+                        </li>
+                        <li class="form__inputs-list-item">
+                           <input name="authorities-7" type="checkbox" id="authorities-7">
+                           <label for="authorities-7">Министерство государственного управления, информационных технологий и связи</label>
+                        </li>
+                        <li class="form__inputs-list-item">
+                           <input name="authorities-8" type="checkbox" id="authorities-8">
+                           <label for="authorities-8">Министерство государственного управления, информационных технологий и связи</label>
+                        </li>
+                        <li class="form__inputs-list-item">
+                           <input name="authorities-9" type="checkbox" id="authorities-9">
+                           <label for="authorities-9">Министерство государственного управления, информационных технологий и связи</label>
+                        </li>
+                        <li class="form__inputs-list-item">
+                           <input name="authorities-10" type="checkbox" id="authorities-10">
+                           <label for="authorities-10">Министерство государственного управления, информационных технологий и связи</label>
+                        </li>
+                        <li class="form__inputs-list-item">
+                           <input name="authorities-11" type="checkbox" id="authorities-11">
+                           <label for="authorities-11">Министерство государственного управления, информационных технологий и связи</label>
+                        </li>
+                        <li class="form__inputs-list-item">
+                           <input name="authorities-12" type="checkbox" id="authorities-12">
+                           <label for="authorities-12">Министерство государственного управления, информационных технологий и связи</label>
+                        </li>
+                        <li class="form__inputs-list-item">
+                           <input name="authorities-13" type="checkbox" id="authorities-13">
+                           <label for="authorities-13">Министерство государственного управления, информационных технологий и связи</label>
+                        </li>
+                        <li class="form__inputs-list-item">
+                           <input name="authorities-14" type="checkbox" id="authorities-14">
+                           <label for="authorities-14">Министерство государственного управления, информационных технологий и связи</label>
+                        </li>
+                     </ul>
+                  </div>
+
+                  <div class="form__col  col-sm-6">
+                     <ul class="form__inputs-list  form__inputs-list--vertical">
+                        <li class="form__inputs-list-item">
+                           <input name="authorities-1" type="checkbox" id="authorities-1">
+                           <label for="authorities-1">Министерство государственного управления, информационных технологий и связи</label>
+                        </li>
+                        <li class="form__inputs-list-item">
+                           <input name="authorities-2" type="checkbox" id="authorities-2">
+                           <label for="authorities-2">Министерство государственного управления, информационных технологий и связи</label>
+                        </li>
+                        <li class="form__inputs-list-item">
+                           <input name="authorities-3" type="checkbox" id="authorities-3">
+                           <label for="authorities-3">Министерство государственного управления, информационных технологий и связи</label>
+                        </li>
+                        <li class="form__inputs-list-item">
+                           <input name="authorities-4" type="checkbox" id="authorities-4">
+                           <label for="authorities-4">Министерство государственного управления, информационных технологий и связи</label>
+                        </li>
+                        <li class="form__inputs-list-item">
+                           <input name="authorities-5" type="checkbox" id="authorities-5">
+                           <label for="authorities-5">Министерство государственного управления, информационных технологий и связи</label>
+                        </li>
+                        <li class="form__inputs-list-item">
+                           <input name="authorities-6" type="checkbox" id="authorities-6">
+                           <label for="authorities-6">Министерство государственного управления, информационных технологий и связи</label>
+                        </li>
+                        <li class="form__inputs-list-item">
+                           <input name="authorities-7" type="checkbox" id="authorities-7">
+                           <label for="authorities-7">Министерство государственного управления, информационных технологий и связи</label>
+                        </li>
+                        <li class="form__inputs-list-item">
+                           <input name="authorities-8" type="checkbox" id="authorities-8">
+                           <label for="authorities-8">Министерство государственного управления, информационных технологий и связи</label>
+                        </li>
+                        <li class="form__inputs-list-item">
+                           <input name="authorities-9" type="checkbox" id="authorities-9">
+                           <label for="authorities-9">Министерство государственного управления, информационных технологий и связи</label>
+                        </li>
+                        <li class="form__inputs-list-item">
+                           <input name="authorities-10" type="checkbox" id="authorities-10">
+                           <label for="authorities-10">Министерство государственного управления, информационных технологий и связи</label>
+                        </li>
+                        <li class="form__inputs-list-item">
+                           <input name="authorities-11" type="checkbox" id="authorities-11">
+                           <label for="authorities-11">Министерство государственного управления, информационных технологий и связи</label>
+                        </li>
+                        <li class="form__inputs-list-item">
+                           <input name="authorities-12" type="checkbox" id="authorities-12">
+                           <label for="authorities-12">Министерство государственного управления, информационных технологий и связи</label>
+                        </li>
+                        <li class="form__inputs-list-item">
+                           <input name="authorities-13" type="checkbox" id="authorities-13">
+                           <label for="authorities-13">Министерство государственного управления, информационных технологий и связи</label>
+                        </li>
+                        <li class="form__inputs-list-item">
+                           <input name="authorities-14" type="checkbox" id="authorities-14">
+                           <label for="authorities-14">Министерство государственного управления, информационных технологий и связи</label>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <button type="submit" class="btn  btn--fill">Применить</button>
+      </form>
+   </div>
+
+</div>

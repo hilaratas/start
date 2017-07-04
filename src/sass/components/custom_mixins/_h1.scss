@@ -1,0 +1,18 @@
+@mixin h1 () { 
+	font-size: $font-size-h1;
+	font-weight: $font-bold;
+	line-height: $line-height-h1;
+	color: $color-brand-1;
+	margin: 0 0 $h1-indent-bottom 0; 
+	text-align: left;
+
+	@media (max-width: $screen-sm-max) {
+		font-size: $font-size-h1-sm;
+		line-height: $line-height-h1-sm;
+	}
+
+	@media (max-width: $screen-xs-max) {
+		font-size: $font-size-h1-xs;
+		line-height: $line-height-h1-xs;
+	}
+}

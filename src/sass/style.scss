@@ -1,0 +1,54 @@
+﻿@import "variables";
+
+@import "bootstrap/mixins";
+@import "components/custom_mixins";
+@import "../tmp/Iconfont/iconfont";
+
+// Reset and dependencies
+@import "bootstrap/normalize";
+//@import "bootstrap/print";
+
+//components
+@import "components/blocks/reset"; // Надо
+@import "components/blocks/page"; // Надо
+@import "components/blocks/header"; // Надо
+@import "components/blocks/common"; // Надо
+@import "components/blocks/slogan"; // Надо
+@import "components/blocks/cmn-toggle-switch"; // Надо
+@import "components/blocks/cmn-back"; // Надо
+@import "components/blocks/footer"; // Надо
+@import "components/blocks/footer-free"; // Надо
+@import "components/blocks/main-menu";
+@import "components/blocks/enter-soc";
+@import "components/blocks/section";
+@import "components/blocks/title"; // Надо
+@import "components/blocks/popups"; // Надо
+@import "components/blocks/form"; //Надо
+@import "components/blocks/input"; //Надо
+@import "components/blocks/checkbox"; //Надо
+@import "components/blocks/radio"; //Надо
+@import "components/blocks/button"; //Надо
+@import "components/blocks/select"; //Надо
+@import "components/blocks/text"; //Надо
+@import "components/blocks/row"; //Надо
+@import "components/blocks/tab-menu";
+@import "components/blocks/tabs";
+@import "components/blocks/breadcrumbs"; //Надо
+@import "components/blocks/article";
+@import "components/blocks/faq"; // Точно надо
+@import "components/blocks/list"; // Точно надо
+@import "components/vendor/magnific"; //Надо
+@import "components/blocks/uslugi"; //Надо
+@import "components/blocks/usluga"; //Надо
+@import "components/blocks/icon"; //Надо
+@import "components/blocks/pagination"; // Надо
+@import "components/blocks/link-icon";
+@import "components/blocks/fullscreen-menu"; // Точно надо
+@import "components/blocks/tabs"; // Возможно надо
+@import "components/blocks/under-main-content"; // Надо
+@import "components/blocks/table-responsive"; // Надо
+@import "components/blocks/mobile-table";
+@import "components/blocks/pseudo-tab-menu";
+@import "components/blocks/pseudo-tab";
+@import "components/blocks/pay-tabs";
+@import "components/blocks/list-link"; //надо

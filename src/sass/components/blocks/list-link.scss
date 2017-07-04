@@ -1,0 +1,49 @@
+.list-link {
+	display: inline-block;
+	padding-left: 40px;
+	color: $color-brand-1;
+	position: relative;
+	@include no-decoration();
+	@include iconfont(file);
+
+	&:before {
+		color: $grey-brand-2;
+		text-decoration: none;
+		position: absolute;
+		left: 3px;
+		top: 4px;
+		font-size: 23px;
+	}
+
+	&[href$=".pdf"], &[href$=".docx"], &[href$=".xlsx"], &[href$=".doc"] {
+		@include iconfont(file);
+	}
+
+	&:hover {
+		color: $color-brand-2;
+	}
+
+	&__info {
+		display: table-cell;
+		font-size: $font-size-small;
+		color: darken($grey-brand-2, 20%);
+		@include no-decoration();
+		position: relative;
+
+		&:after {
+			content: "";
+			position: absolute;
+			top: 100%;
+			left: 0;
+			right: 0;
+			border-bottom: 1px solid darken($grey-brand-2, 20%);
+			transition: all $transition-duration;
+		}
+
+		.list-link:hover & {
+			&:after {
+				border-bottom-color: transparent;
+			}
+		}
+	}
+}

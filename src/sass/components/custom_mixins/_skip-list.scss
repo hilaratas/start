@@ -1,0 +1,8 @@
+@mixin skip-list () {
+	&, li { padding: 0; margin: 0; list-style-type: none;}
+	
+	&:before, li:before {
+		display: none; 
+	}
+	
+}

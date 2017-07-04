@@ -1,0 +1,95 @@
+.pseudo-tab-menu {
+
+	display: flex;
+	width: 100%;
+	overflow: hidden;
+
+	&__item {
+		color: $color-brand-6;
+		flex-basis: 50%;
+		text-align: center;
+		overflow: hidden;
+		flex-grow: 0;
+
+		&.active {
+			flex-grow: 1;
+			padding: 15px 25px;
+			overflow: visible;
+		}
+		
+		&--white{
+			border: $border-width solid 
+
+$input-color-border;
+			border-right: 0;
+			color:$color-brand-1;
+			font-size: 1.25rem;
+			
+			&:last-child{
+				border-right: $border-width solid 
+
+$input-color-border;
+			}
+			
+			&.active{
+			    position: relative;
+			    padding: 18px 24px;
+			    
+				&:before{
+					content: '';
+					position: absolute;
+					left: 0;
+					right: 0;
+					bottom: -$border-width;
+					height: $border-width;
+					background: $color-brand-6;	
+				}
+			}
+		}
+	}
+
+	&__title {
+		display: block;
+		width: 100%;
+		white-space: nowrap;
+	}
+
+	&__link {
+		display: block;
+		width: 100%;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		white-space: nowrap;
+		color: $color-brand-6;
+		text-decoration: none;
+		padding: 15px 25px;
+		background: 
+
+$color-brand-100;
+		
+		&:hover {
+			background: rgba(red(
+
+$color-brand-100), green(
+
+$color-brand-100), blue(
+
+$color-brand-100), 0.3);
+		}
+		
+		&--white{
+			padding: 18px 24px;
+			background: #fff;
+			border: $border-width solid 
+
+$input-color-border;
+			color: $color-brand-1;
+			font-size: 1.25rem;
+			
+			&:hover {
+				background: rgba(red($color-brand-1), green($color-brand-1), blue($color-brand-1), 0.15);
+			}
+		}
+	}
+
+}
