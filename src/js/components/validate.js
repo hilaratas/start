@@ -1,9 +1,50 @@
 export default function () {
 
+	$.validator.setDefaults({
+	    errorElement: 'span',
+	    errorPlacement: function(error, element) {
+	      error.addClass('form__error-label');
+	      error.appendTo(element.closest('.form__control-wrap'));
+	    },
+	    highlight: function(element, errorClass, validClass) {
+	      $(element).addClass(errorClass).removeClass(validClass);
+	    },
+	    unhighlight: function(element, errorClass, validClass) {
+	      var $input = $(element);
+
+	      if ($input.val() === '') {
+	        $input.removeClass(validClass).removeClass(errorClass);
+	      } else {
+	        $input.removeClass(errorClass).addClass(validClass);
+	      }
+	    },
+	    errorClass: 'is-error',
+	    validClass: 'is-valid',
+	    ignore: '.is-ignore'
+	});
+
+	$.extend($.validator.messages, {
+	    required: 'Поле обязательно к заполнению',
+	    remote: 'Поле заполнено некорректно',
+	    email: 'E-mail некорректен',
+	    url: 'URL некорректен',
+	    date: 'Некорректная дата',
+	    dateISO: 'Введите корректную дату в формате ISO.',
+	    number: 'Введите число',
+	    digits: 'Введите только цифры',
+	    creditcard: 'Введите правильный номер карты',
+	    equalTo: 'Введите такое же значение ещё раз',
+	    extension: 'Выберите файл с правильным расширением',
+	    maxlength: $.validator.format('Введите не больше {0} символов'),
+	    minlength: $.validator.format('Введите не меньше {0} символов'),
+	    rangelength: $.validator.format('Введите значение длиной от {0} до {1} символов'),
+	    range: $.validator.format('Введите число от {0} до {1}'),
+	    max: $.validator.format('Введите число, меньшее или равное {0}'),
+	    min: $.validator.format('Введите число, большее или равное {0}')
+	});
+
 	$('.js-form-validate').each(function(){
-       
         var $this_form = $(this);
-		
         $this_form.validate();
     });
 
@@ -11,11 +52,6 @@ export default function () {
 		var $this_form = $(this);
 
 		$this_form.validate({
-
-			errorPlacement: function(error, element) {
-	            error.appendTo(element.closest('.form__row'));
-	        },
-
 			submitHandler: function(form) {
 				$(form).ajaxSubmit({
 					beforeSubmit: function(formData, jqForm, options){
@@ -63,33 +99,6 @@ export default function () {
 		});
 	});
 
-	function makeMsgFromArray(array){
-		var msg = '';
-
-		for ( var i = 0; i <array.length; i++) {
-			msg += array[i] + '<br/>';
-		}
-
-		return msg;
-	};
-	
-	$.validator.addMethod("greaterThan", function(value, element, params) {    
-	    if (!/Invalid|NaN/.test(new Date(value))) {
-	        return new Date(value) > new Date($(params[0]).val());
-	    }    
-	    return isNaN(value) && isNaN($(params[0]).val()) || (Number(value) > Number($(params[0]).val())); 
-	},'Must be greater than {1}.');
-
-	$.validator.addMethod("float-digits", function(value, element, param) {
-		if (this.optional(element)) {
-			return true;
-		}
-		if (typeof param === "string") {
-			param = new RegExp(param);
-		}
-		return param.test(value);
-	});
-
 	$('.js-form-validate-remote').each(function(){
 
 		var $curForm = $(this);
@@ -109,4 +118,35 @@ export default function () {
 		    }
 		});
 	});
+
+	
+	
+	$.validator.addMethod("greaterThan", function(value, element, params) {    
+	    if (!/Invalid|NaN/.test(new Date(value))) {
+	        return new Date(value) > new Date($(params[0]).val());
+	    }    
+	    return isNaN(value) && isNaN($(params[0]).val()) || (Number(value) > Number($(params[0]).val())); 
+	},'Must be greater than {1}.');
+
+	$.validator.addMethod("float-digits", function(value, element, param) {
+		if (this.optional(element)) {
+			return true;
+		}
+		if (typeof param === "string") {
+			param = new RegExp(param);
+		}
+		return param.test(value);
+	});
+
+	
+
+	function makeMsgFromArray(array){
+		var msg = '';
+
+		for ( var i = 0; i <array.length; i++) {
+			msg += array[i] + '<br/>';
+		}
+
+		return msg;
+	};
 }
