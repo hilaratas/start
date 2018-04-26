@@ -2,7 +2,11 @@ const gulp = require('gulp');
 const watch = require('gulp-watch');
 const plumber = require('gulp-plumber');
 const del = require('del');
-const browserSync = require('browser-sync');
+
+const hb = require('handlebars'),
+  gulpHandlebars = require('gulp-handlebars-html')(hb),
+  fileinclude = require('gulp-file-include'),
+  prettify = require('gulp-jsbeautifier');
 
 // sass plugins
 const sass = require('gulp-sass'),
@@ -32,6 +36,10 @@ const svgmin = require('gulp-svgmin'),
 const iconfont = require('gulp-iconfont'),
     iconfontCss = require('gulp-iconfont-css');
 
+// server plugins
+const browserSync = require('browser-sync'); // возможно, не надо
+const lrServer = require('gulp-server-livereload');
+
 
 const config = {
   src: {
@@ -39,6 +47,7 @@ const config = {
     cssVendor: 'src/css/vendor/*.*',
     js: ['src/js/[^_]*.js', '!src/js/main.js', 'src/js/**/*.js', 'src/js/**/*.geojson'],
     sassCustom: 'src/css/style.scss',
+    bootstrapGrid: 'src/css/bootstrap-grid.scss',
     jsVendors: ['src/js/vendors/*.js'],
     jsPlugins: ['src/js/plugins/*.js'],
     svgSprite: 'src/media_design/svg-store/*.svg',
@@ -54,7 +63,7 @@ const config = {
   build: {
     html: 'build/',
     js: 'build/js/',
-    sassCustom: 'build/css/',
+    css: 'build/css/',
     svgSprite: 'build/media_design/',
     svgDesign: 'build/media_design/',
     svgExample: 'build/media_example/',
@@ -67,12 +76,17 @@ const config = {
   },
 
   watch: {
+    html: ['src/*.html', 'src/partials/*.html'],
+    cssCustom: ['src/css/style.scss', 'src/css/_variables_components.scss', 'src/css/components/**/*.scss'],
     html: 'src/*.html',
+    bootstrapGrid: ['src/css/bootstrap-grid.scss', 'src/css/_variables_bootstrap.scss', 'src/css/bootstrap/**/*/css'],
+    jsVendors: ['src/js/vendors/*.js'],
+    jsPlugins: ['src/js/plugins/*.js'],
     js: 'src/js/**/*.js'
   },
 
   clean: './build', //директории которые могут очищаться
-  server: './build' //исходная корневая директория для запуска минисервера
+  server: 'build'  //исходная корневая директория для запуска минисервера
 };
 
 const webpackConfig = {
@@ -100,9 +114,24 @@ const customfontName = 'Iconfont';
 
 gulp.task('del', () => del(config.clean) );
 
-gulp.task('html', () => gulp.src(config.src.html).pipe(gulp.dest(config.build.html)) );
+gulp.task('html', function() {
 
-gulp.task('sassCustom', function() {
+    return gulp.src(config.src.html)
+    .pipe(plumber())
+    .pipe(prettify())
+    .pipe(fileinclude({
+      prefix: '@@'
+    }))
+    .pipe(prettify())
+    .pipe(gulp.dest(config.build.html));
+});
+
+gulp.task('bootstrapGrid', () => { return gulp.src(config.src.bootstrapGrid).pipe(plumber())
+    .pipe(sass()).pipe(autoprefixer({ browsers: ['last 4 versions'] }))
+    .pipe(mmq()).pipe(rename('bootstrap-grid.css'))
+    .pipe(gulp.dest(config.build.css)); });
+
+gulp.task('cssCustom', function() {
   return gulp.src(config.src.sassCustom)
     .pipe(plumber())
     .pipe(sass())
@@ -111,7 +140,7 @@ gulp.task('sassCustom', function() {
     }))
     .pipe(mmq())
     .pipe(rename('style.css'))
-    .pipe(gulp.dest(config.build.sassCustom));
+    .pipe(gulp.dest(config.build.css));
 });
 
 gulp.task('jsVendors', () => gulp.src(config.src.jsVendors).pipe(gulp.dest(config.build.js)) );
@@ -178,7 +207,7 @@ gulp.task('fonts', () => gulp.src([config.src.fonts, 'src/tmp/' + customfontName
 
 
 gulp.task('serve', function() {
-    browserSync.init({ server: "./build" });
+    browserSync.init({ server: config.server });
 
     gulp.watch("./build/**/*.html, ./build/**/*.js").on('change', browserSync.reload);
 
@@ -189,7 +218,32 @@ gulp.task('serve', function() {
   });
 });
 
-build = gulp.series('del', 'html', 'jsPlugins', 'jsVendors', 'jsCustom', 'svgSprite', 'svgDesign', 'svgExample', 'imgDesign', 'imgExample', 'iconFonts', 'fonts', 'sassCustom');
+gulp.task('lr', () => {
+  gulp.src(config.server)
+    .pipe(lrServer({
+      defaultFile: 'src/index.html',
+      livereload: true,
+      directoryListing: true,
+      open: true
+    }));
+});
+
+gulp.task('watch', function(){
+  gulp.watch(config.watch.html, gulp.series('html'));
+  gulp.watch(config.watch.cssCustom, gulp.series('cssCustom'));
+  gulp.watch(config.watch.jsPlugins, gulp.series('jsPlugins'));
+  gulp.watch(config.watch.jsVendors, gulp.series('jsVendors'));
+  gulp.watch(config.src.svgSprite, gulp.series('svgSprite'));
+  gulp.watch(config.src.svgDesign, gulp.series('svgDesign'));
+  gulp.watch(config.src.svgExample, gulp.series('svgExample'));
+  gulp.watch(config.src.imgDesign, gulp.series('imgDesign'));
+  gulp.watch(config.src.imgExample, gulp.series('imgExample'));
+  gulp.watch(config.watch.bootstrapGrid, gulp.series('bootstrapGrid'));
+  gulp.watch(config.watch.cssCustom, gulp.series('cssCustom'));
+});
+
+build = gulp.series('del', 'html', 'jsPlugins', 'jsVendors', 'jsCustom', 'svgSprite', 'svgDesign', 'svgExample', 'imgDesign', 'imgExample', 'iconFonts', 'fonts', 'bootstrapGrid', 'cssCustom');
 
 gulp.task('default', build);
-gulp.task('dev', gulp.series(build, watch));
+gulp.task('serve');
+gulp.task('dev', gulp.series(build, gulp.parallel('watch', 'lr')));

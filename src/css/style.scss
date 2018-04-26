@@ -1,11 +1,11 @@
-﻿@import "variables";
+﻿@import "variables_components";
 
-@import "bootstrap/mixins";
+@import "bootstrap3/mixins";
 @import "components/custom_mixins";
 @import "../tmp/Iconfont/iconfont";
 
 // Reset and dependencies
-@import "bootstrap/normalize";
+@import "bootstrap3/normalize";
 //@import "bootstrap/print";
 
 //components
