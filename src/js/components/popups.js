@@ -31,4 +31,14 @@ export default function () {
 		}
 	});
 
+	$('.js-popup-inline, .js-popup-image, .js-popup-gallery')
+		.on('mfpOpen', function(e){
+			document.body.classList.add('page--open-popup');
+			document.documentElement.classList.add('html--open-popup');
+		})
+		.on('mfpClose', function(e){
+			document.body.classList.remove('page--open-popup');
+			document.documentElement.classList.remove('html--open-popup');
+		});
+
 }
