@@ -44,12 +44,12 @@ const lrServer = require('gulp-server-livereload');
 const config = {
   src: {
     html: 'src/*.html',
-    cssVendor: 'src/css/vendor/*.*',
-    js: ['src/js/[^_]*.js', '!src/js/main.js', 'src/js/**/*.js', 'src/js/**/*.geojson'],
     sassCustom: 'src/css/style.scss',
     bootstrapGrid: 'src/css/bootstrap-grid.scss',
-    jsVendors: ['src/js/vendors/*.js'],
-    jsPlugins: ['src/js/plugins/*.js'],
+    cssVendor: 'src/css/vendor/*.*',
+    js: ['src/js/[^_]*.js', '!src/js/main.js', 'src/js/**/*.js', 'src/js/**/*.geojson'],
+    jsVendors: 'src/js/vendors/*.js',
+    jsPlugins: 'src/js/plugins/*.js',
     svgSprite: 'src/media_design/svg-store/*.svg',
     svgDesign: 'src/media_design/**/*.svg',
     svgExample: 'src/media_example/**/*.svg',
@@ -63,6 +63,8 @@ const config = {
   build: {
     html: 'build/',
     js: 'build/js/',
+    jsVendors: 'build/js/vendors/',
+    jsPlugins: 'build/js/plugins/',
     css: 'build/css/',
     svgSprite: 'build/media_design/',
     svgDesign: 'build/media_design/',
@@ -76,9 +78,8 @@ const config = {
   },
 
   watch: {
-    html: ['src/*.html', 'src/partials/*.html'],
+    html: ['src/**/*.html'],
     cssCustom: ['src/css/style.scss', 'src/css/_variables_components.scss', 'src/css/components/**/*.scss'],
-    html: 'src/*.html',
     bootstrapGrid: ['src/css/bootstrap-grid.scss', 'src/css/_variables_bootstrap.scss', 'src/css/bootstrap/**/*/css'],
     jsVendors: ['src/js/vendors/*.js'],
     jsPlugins: ['src/js/plugins/*.js'],
@@ -143,9 +144,9 @@ gulp.task('cssCustom', function() {
     .pipe(gulp.dest(config.build.css));
 });
 
-gulp.task('jsVendors', () => gulp.src(config.src.jsVendors).pipe(gulp.dest(config.build.js)) );
+gulp.task('jsVendors', () => { return gulp.src(config.src.jsVendors).pipe(gulp.dest(config.build.jsVendors)) });
 
-gulp.task('jsPlugins', () => gulp.src(config.src.jsPlugins).pipe(gulp.dest(config.build.js)) );
+gulp.task('jsPlugins', () => { return gulp.src(config.src.jsPlugins).pipe(gulp.dest(config.build.jsPlugins)) });
 
 gulp.task('jsCustom', function(callback) {
   let firstBuildReady = false;
@@ -221,7 +222,7 @@ gulp.task('serve', function() {
 gulp.task('lr', () => {
   gulp.src(config.server)
     .pipe(lrServer({
-      defaultFile: 'src/index.html',
+      defaultFile: 'build/index.html',
       livereload: true,
       directoryListing: true,
       open: true
@@ -246,4 +247,4 @@ build = gulp.series('del', 'html', 'jsPlugins', 'jsVendors', 'jsCustom', 'svgSpr
 
 gulp.task('default', build);
 gulp.task('serve');
-gulp.task('dev', gulp.series(build, gulp.parallel('watch', 'lr')));
+gulp.task('dev', gulp.series(build, gulp.parallel('watch', 'serve')));

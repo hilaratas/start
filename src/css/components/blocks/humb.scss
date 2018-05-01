@@ -21,7 +21,7 @@ $button-trans-delay: 0.3s;
  * class that acts as a reset for all versions of the icon.
  */
 
-.cmn-toggle-switch {
+.humb {
   display: block;
   overflow: hidden;
   margin: 0;
@@ -57,12 +57,10 @@ $button-trans-delay: 0.3s;
   }
 }
 
-.cmn-toggle-switch--header {
+.humb--header {
   width: $header-height-mobile;
   height: $header-height-mobile;
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
 
   span {
     display: block;
@@ -89,72 +87,72 @@ $button-trans-delay: 0.3s;
   }
 }
 
-.cmn-toggle-switch span::before {
+.humb span::before {
   top: -(($cross-height / 2) - ($bar-thickness / 2));
 }
 
-.cmn-toggle-switch span::after {
+.humb span::after {
   bottom: -(($cross-height / 2) - ($bar-thickness / 2));
 }
 
-.cmn-toggle-switch__htx {
+.humb__htx {
   background: transparent;
 }
 
-.cmn-toggle-switch__htx span {
+.humb__htx span {
   transition: background 0s $button-trans-delay;
 }
 
-.cmn-toggle-switch__htx span::before,
-.cmn-toggle-switch__htx span::after {
+.humb__htx span::before,
+.humb__htx span::after {
   //transition-duration: $button-trans-delay, $button-trans-delay;
   //transition-delay: $button-trans-delay, 0s;
 }
 
-.cmn-toggle-switch__htx span::before {
+.humb__htx span::before {
   transition: top $button-trans-delay ease $button-trans-delay, transform $button-trans-delay ease 0s;
   //transition-property: top, transform;
 }
 
-.cmn-toggle-switch__htx span::after {
+.humb__htx span::after {
   transition: bottom $button-trans-delay ease $button-trans-delay, transform $button-trans-delay ease 0s;
 }
 
 /* active state, i.e. menu open */
 
-.cmn-toggle-switch__htx.active {
+.humb__htx.active {
 
   &:before {
     background: red;
   }
 }
 
-.cmn-toggle-switch__htx.active span {
+.humb__htx.active span {
   background: none;
   transition: background $button-trans-delay 0s; 
 }
 
-.cmn-toggle-switch__htx.active span::before {
+.humb__htx.active span::before {
   top: 0;
   transform: rotate(45deg);
 }
 
-.cmn-toggle-switch__htx.active span::after {
+.humb__htx.active span::after {
   bottom: 0;
   transform: rotate(-45deg);
 }
 
-.cmn-toggle-switch__htx.active span::before
+.humb__htx.active span::before
 {
   transition: top $button-trans-delay ease 0s, transform $button-trans-delay ease $button-trans-delay;
 }
 
-.cmn-toggle-switch__htx.active span::after {
+.humb__htx.active span::after {
   transition: bottom $button-trans-delay ease 0s, transform $button-trans-delay ease $button-trans-delay;
 }
 
 @media (min-width: $screen-sm-min) {
-    .cmn-toggle-switch {
+    .humb {
       display: none;
     }
   
