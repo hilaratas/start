@@ -14,6 +14,7 @@ import mask from './components/mask';
 import svg4everybody from './components/svg4everybody';
 import pageReload from './components/page-reload';
 import payTabs from './components/pay-tabs';
+import svgStore from './components/svg-store';
 
 
 
@@ -34,6 +35,7 @@ $(function(){
 	svg4everybody();
 	pageReload();
 	payTabs();
+	svgStore();
 });
 
 
