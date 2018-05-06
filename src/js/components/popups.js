@@ -2,7 +2,7 @@ export default function () {
 
 	$.extend(true, $.magnificPopup.defaults, {
 		removalDelay: 300,
-		mainClass: 'mfp-fade-in mfp-fade-test',
+		mainClass: 'mfp-fade-in',
 		fixedContentPos: true,
 		fixedBgPos: true 
 	});
