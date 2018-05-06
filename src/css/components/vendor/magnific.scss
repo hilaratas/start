@@ -102,6 +102,7 @@ $mfp-use-visuallyhidden:              false !default;                      // Hi
   position: fixed;
   outline: none !important;
   -webkit-backface-visibility: hidden; // fixes webkit bug that can cause "false" scrollbar
+  -webkit-overflow-scrolling: touch;
 }
 
 // Root container
