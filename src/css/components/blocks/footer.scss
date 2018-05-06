@@ -3,19 +3,20 @@
 	margin: 0 auto;
 
 	&__wrapper {
-		padding: 0 10px;
-		background-image: linear-gradient(to right, #1c709c 0%, #0D51B3 100%);
+		background:  #0d51b3; 
 	}
-
 
 	&__inner {
 		max-width: 1140px;
 		width: 100%;
 		margin: 0 auto;
+		padding-right: 30px;
+		padding-left: 30px;
 	}
 
 	&__copyholder {
-		padding: 10px 0;
+		display: inline-block;
+		padding: 15px 0;
 	}
 
 	@media (max-width: $screen-xs-max) {
