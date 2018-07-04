@@ -20,13 +20,13 @@ html {
   box-sizing: inherit;
 }
 
-@import "bootstrap/functions";
+@import "bootstrap4/functions";
 @import "variables_bootstrap";
 
-@import "bootstrap/mixins/breakpoints";
-@import "bootstrap/mixins/grid-framework";
-@import "bootstrap/mixins/grid";
+@import "bootstrap4/mixins/breakpoints";
+@import "bootstrap4/mixins/grid-framework";
+@import "bootstrap4/mixins/grid";
 
-@import "bootstrap/grid";
-@import "bootstrap/utilities/display";
-@import "bootstrap/utilities/flex";
+@import "bootstrap4/grid";
+@import "bootstrap4/utilities/display";
+@import "bootstrap4/utilities/flex";

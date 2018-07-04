@@ -1,0 +1,114 @@
+.lenta {
+    display: flex;
+    flex-wrap: wrap;
+
+    .lenta__item {
+      position: relative;
+    }
+
+    &--15px {
+      .lenta__item {
+        margin-top: 15px;
+      }
+    }
+
+    &--top-separator {
+      .lenta__item {
+        &:before {
+          content: '';
+          position: absolute;
+          left: 25px;
+          right: 25px;
+          top: 0;
+          height: 1px;
+          background: rgba($grey-brand-1, 0.5);
+        }
+      }
+      
+    }
+
+    @media (max-width: $screen-xs-max) {
+      @for $i from 1 through $grid-columns {
+        &--xs-#{$i} .lenta__item {
+          &:nth-child(-n+#{$i}) {
+            margin-top: 0;
+          }
+        }
+        &--xs-#{$i}.lenta--top-separator .lenta__item {
+          &:nth-child(-n+#{$i}) {
+            &:before {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+    @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+      @for $i from 1 through $grid-columns {
+        &--sm-#{$i} .lenta__item {
+          &:nth-child(-n+#{$i}) {
+            margin-top: 0;
+          }
+        }
+        &--sm-#{$i}.lenta--top-separator .lenta__item {
+          &:nth-child(-n+#{$i}) {
+            &:before {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+    @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+      @for $i from 1 through $grid-columns {
+        &--md-#{$i} .lenta__item {
+          &:nth-child(-n+#{$i}) {
+            margin-top: 0;
+          }
+        }
+        &--md-#{$i}.lenta--top-separator .lenta__item {
+          &:nth-child(-n+#{$i}) {
+            &:before {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+    @media (min-width: $screen-lg-min) and (max-width: $screen-lg-max) {
+      @for $i from 1 through $grid-columns {
+        &--lg-#{$i} .lenta__item {
+          &:nth-child(-n+#{$i}) {
+            margin-top: 0;
+          }
+        }
+        &--lg-#{$i}.lenta--top-separator .lenta__item {
+          &:nth-child(-n+#{$i}) {
+            &:before {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+    @media (min-width: $screen-xl-min) {
+      @for $i from 1 through $grid-columns {
+        &--xl-#{$i} .lenta__item {
+          &:nth-child(-n+#{$i}) {
+            margin-top: 0;
+          }
+        }
+        &--xl-#{$i}.lenta--top-separator .lenta__item {
+          &:nth-child(-n+#{$i}) {
+            &:before {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }

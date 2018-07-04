@@ -44,9 +44,10 @@ const lrServer = require('gulp-server-livereload');
 const config = {
   src: {
     html: 'src/*.html',
-    sassCustom: 'src/css/style.scss',
-    bootstrapGrid: 'src/css/bootstrap-grid.scss',
-    cssVendor: 'src/css/vendor/*.*', 
+    sassCustom: 'src/scss/style.scss',
+    bootstrap: 'src/scss/bootstrap4.scss',
+    bootstrapGrid: 'src/scss/bootstrap4-grid.scss',
+    cssVendor: 'src/scss/vendor/*.*', 
     jsVendors: 'src/js/vendors/*.js',
     jsPlugins: 'src/js/plugins/*.js',
     jsCustom: 'src/js/main.js',
@@ -79,8 +80,9 @@ const config = {
 
   watch: {
     html: ['src/**/*.html'],
-    cssCustom: ['src/css/style.scss', 'src/css/_variables_components.scss', 'src/css/components/**/*.scss'],
-    bootstrapGrid: ['src/css/bootstrap-grid.scss', 'src/css/_variables_bootstrap.scss', 'src/css/bootstrap/**/*/css'],
+    cssCustom: ['src/scss/style.scss', 'src/scss/_variables_components.scss', 'src/scss/components/**/*.scss'],
+    bootstrap: ['src/scss/bootstrap4.scss', 'src/scss/_variables_bootstrap.scss', 'src/scss/bootstrap4/**/*/css'],
+    bootstrapGrid: ['src/scss/bootstrap4-grid.scss', 'src/scss/_variables_bootstrap.scss', 'src/scss/bootstrap/**/*/css'],
     jsVendors: ['src/js/vendors/*.js'],
     jsPlugins: ['src/js/plugins/*.js'],
     jsCustom:  ['src/js/main.js', 'src/js/components/**/*.js'],
@@ -128,9 +130,14 @@ gulp.task('html', function() {
     .pipe(gulp.dest(config.build.html));
 });
 
-gulp.task('bootstrapGrid', () => { return gulp.src(config.src.bootstrapGrid).pipe(plumber())
+gulp.task('bootstrap4', () => { return gulp.src(config.src.bootstrap).pipe(plumber())
     .pipe(sass()).pipe(autoprefixer({ browsers: ['last 4 versions'] }))
-    .pipe(mmq()).pipe(rename('bootstrap-grid.css'))
+    .pipe(mmq()).pipe(rename('bootstrap4.css'))
+    .pipe(gulp.dest(config.build.css)); });
+
+gulp.task('bootstrap4Grid', () => { return gulp.src(config.src.bootstrapGrid).pipe(plumber())
+    .pipe(sass()).pipe(autoprefixer({ browsers: ['last 4 versions'] }))
+    .pipe(mmq()).pipe(rename('bootstrap4-grid.css'))
     .pipe(gulp.dest(config.build.css)); });
 
 gulp.task('cssCustom', function() {
@@ -241,11 +248,13 @@ gulp.task('watch', function(){
   gulp.watch(config.src.svgExample, gulp.series('svgExample'));
   gulp.watch(config.src.imgDesign, gulp.series('imgDesign'));
   gulp.watch(config.src.imgExample, gulp.series('imgExample'));
-  gulp.watch(config.watch.bootstrapGrid, gulp.series('bootstrapGrid'));
+  gulp.watch(config.watch.bootstrap, gulp.series('bootstrap4'));
+  gulp.watch(config.watch.bootstrapGrid, gulp.series('bootstrap4Grid'));
   gulp.watch(config.watch.cssCustom, gulp.series('cssCustom'));
 });
 
-build = gulp.series('del', 'html', 'jsPlugins', 'jsVendors', 'jsCustom', 'svgSprite', 'svgDesign', 'svgExample', 'imgDesign', 'imgExample', 'iconFonts', 'fonts', 'bootstrapGrid', 'cssCustom');
+//build = gulp.series('del', 'html', 'jsPlugins', 'jsVendors', 'jsCustom', 'svgSprite', 'svgDesign', 'svgExample', 'imgDesign', 'imgExample', 'iconFonts', 'fonts', 'bootstrapGrid', 'cssCustom');
+build = gulp.series('del', 'html', 'jsPlugins', 'jsVendors', 'jsCustom', 'svgSprite', 'svgDesign', 'svgExample', 'imgDesign', 'imgExample', 'fonts', 'bootstrap4', 'bootstrap4Grid', 'cssCustom');
 
 gulp.task('default', build);
 gulp.task('dev', gulp.series(build, gulp.parallel('serve', 'watch')));

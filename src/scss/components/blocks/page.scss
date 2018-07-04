@@ -1,0 +1,26 @@
+.page {
+    background-color: #fff;
+    height: 100%;
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    
+    &__wrapper {
+        height: 100%;
+    }
+    
+    &__middle {
+        display: table-row;
+        height: 100%;
+    }
+    
+    &__header {
+        display: table-row;
+        height: 1px; 
+    }
+    
+    &__footer {
+        display: table-row;
+        height: 1px;
+    }
+}

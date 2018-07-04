@@ -1,42 +1,15 @@
 html {
   box-sizing: border-box;
-  font-size: $font-size;
+  font-family: $font-family-base;
+  font-size: $font-size-base-px;
+  line-height: $line-height-base;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   height: 100%;
   width: 100%;
-
-    &:before {
-        content: "";
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: rgba(0, 0, 0, 0);
-        z-index: -1;
-        transition: background $transition-duration*2, z-index $transition-duration*2;
-
-        .blind & {
-            display: none;
-        }
-    }
-
-    &.blind {
-        min-width: $container-large-desktop;
-        overflow-x: auto;
-        position: relative;
-    }
 }
 
 *, *:before, *:after {
   box-sizing: inherit;
-}
-
-body {
-  font-family: $font-family;
-  font-size: $font-size-base;
-  line-height: $line-height-base;
-  color: $color-brand-1;
 }
 
 
@@ -64,12 +37,9 @@ img {
 }
 
 a {
-  transition: all $transition-duration;
-
   &:focus {
     outline: none;
   }
-  
 }
 
 @font-face {
