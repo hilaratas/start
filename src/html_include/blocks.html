@@ -1,12 +1,4 @@
 <section class="section">
-    <div class="section__inner">
-        <div class="container-fluid">
-            @@include('./main-menu.html', {"position": "top"})
-        </div>
-    </div>
-</section>
-
-<section class="section">
     <div class="section__main-content">
         <div class="section__inner">
             <div class="container-fluid">
@@ -59,7 +51,17 @@
         
                         <article>
                             <h2 class="title title--h2">Поп-апы</h2>
-                            <a href="#rules" class="button js-popup-inline">Нажми меня, всплывет поп-ап</a>
+                            <h3 class="title title--h3">Одиночные картинки</h3>
+                            <a href="/example/photo1-big.jpg" data-fancybox><img src="/example/photo1-small.jpg" alt=""></a>
+                            <a href="/example/photo2-big.jpg" data-fancybox><img src="/example/photo2-small.jpg" alt=""></a>
+
+                            <h3 class="title title--h3">Галерея картинки</h3>
+                            <a href="/example/photo1-big.jpg" data-fancybox="gallery"><img src="/example/photo1-small.jpg"></a>
+                            <a href="/example/photo2-big.jpg" data-fancybox="gallery"><img src="/example/photo2-small.jpg"></a>
+                            
+
+                            <h3 class="title title--h3">Инлайн-контент</h3>
+                            <a href="#rules" class="button" data-fancybox data-src="#popup-rules">Нажми меня, всплывет поп-ап</a>
                         </article>
 
                         <br><br>

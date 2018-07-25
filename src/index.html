@@ -4,21 +4,21 @@
     @@include('./html_include/head.html', { "title" : "Ссылки на сверстанные страницы" })
 </head>
 <body class="page">
-
-    <div class="page__header">
-    	@@include('./html_include/header.html')
-        @@include('./html_include/fullscreen-menu.html')
-    </div>
-
-
     
-    <div class="page__middle">
-        @@include('./html_include/index.html')
-    </div>
+    <div class="page__wrapper">
     
-    <div class="page__footer">
-        <div class="footer-free"></div>
-        @@include('./html_include/footer.html')
+        <div class="page__header">
+        	@@include('./html_include/header.html')
+        </div>
+        
+        <div class="page__middle">
+            @@include('./html_include/index.html')
+        </div>
+        
+        <div class="page__footer">
+            <div class="footer-free"></div>
+            @@include('./html_include/footer.html')
+        </div>
     </div>
  
     @@include('./html_include/popups.html')

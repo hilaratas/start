@@ -6,10 +6,19 @@
  */
 
 @import "bootstrap4/functions";
-@import "variables_bootstrap";
+@import "variables_bootstrap4";
 @import "bootstrap4/mixins";
 @import "bootstrap4/root";
 @import "bootstrap4/reboot";
+
+@import "bootstrap4/mixins/breakpoints";
+@import "bootstrap4/mixins/grid-framework";
+@import "bootstrap4/mixins/grid";
+
+@import "bootstrap4/grid";
+@import "bootstrap4/utilities/display";
+@import "bootstrap4/utilities/flex";
+
 /*@import "bootstrap4/type";
 @import "bootstrap4/images";
 @import "bootstrap4/code";

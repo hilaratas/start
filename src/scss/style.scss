@@ -3,17 +3,26 @@
 @import "components/custom_mixins";
 //@import "../tmp/Iconfont/iconfont";
 @import "bootstrap4/functions";
-@import "variables_bootstrap";
-@import "components/blocks/reset"; // Надо
-@import "components/blocks/page"; // Надо
-/*@import "components/blocks/header"; // Надо
-@import "components/blocks/humb"; // Надо
-@import "components/blocks/footer"; // Надо
-@import "components/blocks/footer-free"; // Надо
-@import "components/blocks/copyright"; // Надо
+@import "variables_bootstrap4";
+@import "variables_components";
+
+@import "bootstrap4/mixins";
+@import "bootstrap4/mixins/breakpoints";
+@import "bootstrap4/mixins/grid-framework";
+
+// custom-components
+@import "components/blocks/reset";
+@import "components/blocks/page";
+@import "components/blocks/header";
+@import "components/blocks/humb";
+@import "components/blocks/footer";
+@import "components/blocks/footer-free";
 @import "components/blocks/section";
+@import "components/vendor/jquery.fancybox";
+@import "components/blocks/popups";
+@import "components/blocks/prev-icon";
 @import "components/blocks/title"; // Надо
-@import "components/blocks/lenta";
+/*@import "components/blocks/lenta";
 @import "components/blocks/popups"; // Надо
 @import "components/blocks/form";
 @import "components/blocks/input";

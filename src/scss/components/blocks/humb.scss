@@ -3,8 +3,8 @@
 ============================================================================= */
 
 // vars
-$button-width: $header-height-mobile;
-$button-height: $header-height-mobile;
+$button-width: $header-height;
+$button-height: $header-height;
 $cross-width: 20px;
 $cross-height: 20px;
 $bar-thickness: 3px;
@@ -37,6 +37,8 @@ $button-trans-delay: 0.3s;
 
   &:focus {
     outline: none;
+    border: 1px solid #fff;
+    box-shadow: 0px 0px 6px 0px rgba(#fff, 0.75) inset; 
   }
   
   span {
@@ -58,8 +60,8 @@ $button-trans-delay: 0.3s;
 }
 
 .humb--header {
-  width: $header-height-mobile;
-  height: $header-height-mobile;
+  width: $button-width;
+  height: $button-width;
   position: relative;
 
   span {
@@ -149,11 +151,4 @@ $button-trans-delay: 0.3s;
 
 .humb__htx.active span::after {
   transition: bottom $button-trans-delay ease 0s, transform $button-trans-delay ease $button-trans-delay;
-}
-
-@media (min-width: $screen-sm-min) {
-    .humb {
-      display: none;
-    }
-  
 }
