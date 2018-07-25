@@ -53,10 +53,10 @@ const config = {
     jsCustom: 'src/js/main.js',
     svgSprite: 'src/media/svg-store/*.svg',
     svgDesign: 'src/media/**/*.svg',
-    svgExample: 'src/media_example/**/*.svg',
+    svgExample: 'src/example/**/*.svg',
     imgSprite: 'src/media/img-stoge/*.png',
     imgDesign: 'src/media/**/*.{png,jpg,gif}',
-    imgExample: 'src/media_example/**/*.{png,jpg,gif}',
+    imgExample: 'src/example/**/*.{png,jpg,gif}',
     iconfont: 'src/fonts/iconfont-store/*.svg',
     fonts: 'src/fonts/**/*.*',
   },
@@ -67,13 +67,13 @@ const config = {
     jsVendors: 'build/js/vendors/',
     jsPlugins: 'build/js/plugins/',
     css: 'build/css/',
-    svgSprite: 'build/media/',
+    svgSprite: 'build/media/', 
     svgDesign: 'build/media/',
-    svgExample: 'build/media_example/',
+    svgExample: 'build/example/',
     imgSprite: 'build/sprites/',
     imgSpriteCss: 'build/css/',
     imgDesign: 'build/media/',  
-    imgExample: 'build/media_example/',
+    imgExample: 'build/example/',
     iconfont: 'build/fonts/',
     fonts: 'build/fonts/'
   },
@@ -239,7 +239,6 @@ gulp.task('lr', () => {
 
 gulp.task('watch', function(){
   gulp.watch(config.watch.html, gulp.series('html'));
-  gulp.watch(config.watch.cssCustom, gulp.series('cssCustom'));
   gulp.watch(config.watch.jsPlugins, gulp.series('jsPlugins'));
   gulp.watch(config.watch.jsVendors, gulp.series('jsVendors'));
   gulp.watch(config.watch.jsCustom, gulp.series('jsCustom'));
