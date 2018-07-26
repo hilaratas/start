@@ -30,16 +30,10 @@ $button-trans-delay: 0.3s;
   text-indent: -9999px;
   appearance: none;
   box-shadow: none;
+  border: 1px solid transparent;
   border-radius: none;
-  border: none;
   cursor: pointer;
   transition: background $button-trans-delay;
-
-  &:focus {
-    outline: none;
-    border: 1px solid #fff;
-    box-shadow: 0px 0px 6px 0px rgba(#fff, 0.75) inset; 
-  }
   
   span {
     height: $bar-thickness;
