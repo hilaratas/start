@@ -13,7 +13,7 @@
 		padding-right: $padding-base;  
 	}
 
-	@media (max-width: $screen-xs-max) {
+	@include media-breakpoint-up(sm) {
 		&__inner {
 			//margin: 0 -5px;
 			padding: 0;

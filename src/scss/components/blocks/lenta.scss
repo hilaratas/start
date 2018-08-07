@@ -27,7 +27,7 @@
       
     }
 
-    @media (max-width: $screen-xs-max) {
+    @include media-breakpoint-down(xs) {
       @for $i from 1 through $grid-columns {
         &--xs-#{$i} .lenta__item {
           &:nth-child(-n+#{$i}) {
@@ -44,7 +44,7 @@
       }
     }
 
-    @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+   @include media-breakpoint-only(sm) {
       @for $i from 1 through $grid-columns {
         &--sm-#{$i} .lenta__item {
           &:nth-child(-n+#{$i}) {
@@ -61,7 +61,7 @@
       }
     }
 
-    @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    @include media-breakpoint-only(md) {
       @for $i from 1 through $grid-columns {
         &--md-#{$i} .lenta__item {
           &:nth-child(-n+#{$i}) {
@@ -78,7 +78,7 @@
       }
     }
 
-    @media (min-width: $screen-lg-min) and (max-width: $screen-lg-max) {
+    @include media-breakpoint-only(lg) {
       @for $i from 1 through $grid-columns {
         &--lg-#{$i} .lenta__item {
           &:nth-child(-n+#{$i}) {
@@ -95,7 +95,7 @@
       }
     }
 
-    @media (min-width: $screen-xl-min) {
+    @include media-breakpoint-up(xl) {
       @for $i from 1 through $grid-columns {
         &--xl-#{$i} .lenta__item {
           &:nth-child(-n+#{$i}) {

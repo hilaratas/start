@@ -81,7 +81,7 @@ const config = {
   watch: {
     html: ['src/**/*.html'],
     cssCustom: ['src/scss/style.scss', 'src/scss/_variables_components.scss', 'src/scss/components/**/*.scss'],
-    bootstrap: ['src/scss/bootstrap4.scss', 'src/scss/_variables_bootstrap.scss', 'src/scss/bootstrap4/**/*/css'],
+    bootstrap: ['src/scss/bootstrap4.scss', 'src/scss/_variables_bootstrap4.scss', 'src/scss/bootstrap4/**/*/css'],
     bootstrapGrid: ['src/scss/bootstrap4-grid.scss', 'src/scss/_variables_bootstrap.scss', 'src/scss/bootstrap/**/*/css'],
     jsVendors: ['src/js/vendors/*.js'],
     jsPlugins: ['src/js/plugins/*.js'],

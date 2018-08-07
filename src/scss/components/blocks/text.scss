@@ -93,7 +93,7 @@
 		&[href$=".pdf"], &[href$=".docx"], &[href$=".xlsx"], &[href$=".doc"] {
 			position: relative;
 			padding-left: 33px;
-			@include iconfont(file);
+			/*@include iconfont(file);*/
 			&:before {
 				color: $grey-brand-2;
 				text-decoration: none;
