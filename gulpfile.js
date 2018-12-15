@@ -3,9 +3,7 @@ const watch = require('gulp-watch');
 const plumber = require('gulp-plumber');
 const del = require('del');
 
-const hb = require('handlebars'),
-  gulpHandlebars = require('gulp-handlebars-html')(hb),
-  fileinclude = require('gulp-file-include'),
+const fileinclude = require('gulp-file-include'),
   prettify = require('gulp-jsbeautifier');
 
 // sass plugins
@@ -37,13 +35,14 @@ const iconfont = require('gulp-iconfont'),
     iconfontCss = require('gulp-iconfont-css');
 
 // server plugins
-const browserSync = require('browser-sync'); // возможно, не надо
-const lrServer = require('gulp-server-livereload');
+const browserSync = require('browser-sync');
+const server = browserSync.create();
 
 
 const config = {
   src: {
     html: 'src/*.html',
+    cssCopy: 'src/css/**/*.css',
     sassCustom: 'src/scss/style.scss',
     bootstrap: 'src/scss/bootstrap4.scss',
     bootstrapGrid: 'src/scss/bootstrap4-grid.scss',
@@ -63,6 +62,7 @@ const config = {
   
   build: {
     html: 'build/',
+    cssCopy: 'build/css',
     js: 'build/js/',
     jsVendors: 'build/js/vendors/',
     jsPlugins: 'build/js/plugins/',
@@ -80,6 +80,7 @@ const config = {
 
   watch: {
     html: ['src/**/*.html'],
+    cssCopy: 'src/css/**/*.css',
     cssCustom: ['src/scss/style.scss', 'src/scss/_variables_components.scss', 'src/scss/components/**/*.scss'],
     bootstrap: ['src/scss/bootstrap4.scss', 'src/scss/_variables_bootstrap4.scss', 'src/scss/bootstrap4/**/*/css'],
     bootstrapGrid: ['src/scss/bootstrap4-grid.scss', 'src/scss/_variables_bootstrap.scss', 'src/scss/bootstrap/**/*/css'],
@@ -128,6 +129,12 @@ gulp.task('html', function() {
     }))
     .pipe(prettify())
     .pipe(gulp.dest(config.build.html));
+});
+
+gulp.task('cssCopy', function(){
+  return gulp.src(config.src.cssCopy)
+    .pipe(plumber())
+    .pipe(gulp.dest(config.build.cssCopy));
 });
 
 gulp.task('bootstrap4', () => { return gulp.src(config.src.bootstrap).pipe(plumber())
@@ -216,44 +223,32 @@ gulp.task('fonts', () => gulp.src([config.src.fonts, 'src/tmp/' + customfontName
 
 
 gulp.task('serve', function() {
-    browserSync.init({ server: config.server });
-
-    //gulp.watch("./build/**/*.html, ./build/**/*.js").on('change', browserSync.reload);
-
-    // browserSync.watch("./build/**/*.css", function (event, file) {
-    //   if (event === "change") {
-    //       browserSync.reload("*.css");
-    //   }
-    // });
+  server.init({ server: config.server });
 });
 
-gulp.task('lr', () => {
-  gulp.src(config.server)
-    .pipe(lrServer({
-      defaultFile: 'build/index.html',
-      livereload: true,
-      directoryListing: true,
-      open: true
-    }));
-});
+function reload(done) {
+  server.reload();
+  done();
+}
 
 gulp.task('watch', function(){
   gulp.watch(config.watch.html, gulp.series('html'));
-  gulp.watch(config.watch.jsPlugins, gulp.series('jsPlugins'));
-  gulp.watch(config.watch.jsVendors, gulp.series('jsVendors'));
-  gulp.watch(config.watch.jsCustom, gulp.series('jsCustom'));
-  gulp.watch(config.src.svgSprite, gulp.series('svgSprite'));
-  gulp.watch(config.src.svgDesign, gulp.series('svgDesign'));
-  gulp.watch(config.src.svgExample, gulp.series('svgExample'));
-  gulp.watch(config.src.imgDesign, gulp.series('imgDesign'));
-  gulp.watch(config.src.imgExample, gulp.series('imgExample'));
-  gulp.watch(config.watch.bootstrap, gulp.series('bootstrap4'));
-  gulp.watch(config.watch.bootstrapGrid, gulp.series('bootstrap4Grid'));
-  gulp.watch(config.watch.cssCustom, gulp.series('cssCustom'));
+  gulp.watch(config.watch.jsPlugins, gulp.series('jsPlugins', reload));
+  gulp.watch(config.watch.jsVendors, gulp.series('jsVendors', reload));
+  gulp.watch(config.watch.jsCustom, gulp.series('jsCustom', reload));
+  gulp.watch(config.src.svgSprite, gulp.series('svgSprite', reload));
+  gulp.watch(config.src.svgDesign, gulp.series('svgDesign', reload));
+  gulp.watch(config.src.svgExample, gulp.series('svgExample', reload));
+  gulp.watch(config.src.imgDesign, gulp.series('imgDesign', reload));
+  gulp.watch(config.src.imgExample, gulp.series('imgExample', reload));
+  gulp.watch(config.watch.bootstrap, gulp.series('bootstrap4', reload));
+  gulp.watch(config.watch.bootstrapGrid, gulp.series('bootstrap4Grid', reload));
+  gulp.watch(config.watch.cssCopy, gulp.series('cssCopy', reload));
+  gulp.watch(config.watch.cssCustom, gulp.series('cssCustom', reload));
 });
 
-//build = gulp.series('del', 'html', 'jsPlugins', 'jsVendors', 'jsCustom', 'svgSprite', 'svgDesign', 'svgExample', 'imgDesign', 'imgExample', 'iconFonts', 'fonts', 'bootstrapGrid', 'cssCustom');
-build = gulp.series('del', 'html', 'jsPlugins', 'jsVendors', 'jsCustom', 'svgSprite', 'svgDesign', 'svgExample', 'imgDesign', 'imgExample', 'fonts', 'bootstrap4', 'bootstrap4Grid', 'cssCustom');
+build = gulp.series('del', 'html', 'jsPlugins', 'jsVendors', 'jsCustom', 'svgSprite', 'svgDesign', 'svgExample', 'imgDesign', 'imgExample', 'fonts', 'cssCopy', 'bootstrap4', 'bootstrap4Grid', 'cssCustom');
 
 gulp.task('default', build);
 gulp.task('dev', gulp.series(build, gulp.parallel('serve', 'watch')));
+gulp.task('prod', gulp.series(build, 'serve'));
