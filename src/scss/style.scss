@@ -6,11 +6,14 @@
 @import "variables_bootstrap4";
 @import "variables_components";
 
+
+
 @import "bootstrap4/mixins";
 @import "bootstrap4/mixins/breakpoints";
 @import "bootstrap4/mixins/grid-framework";
 
 // custom-components
+@import "components/blocks/reboot.scss";
 @import "components/blocks/reset";
 @import "components/blocks/page";
 @import "components/blocks/header";
@@ -33,3 +36,5 @@
 @import "components/blocks/text";
 @import "components/blocks/table-responsive";
 @import "components/blocks/mobile-table";
+
+@import "components/blocks/main-menu";

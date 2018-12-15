@@ -3,11 +3,13 @@
 <head>
     @@include('./html_include/head.html', { "title" : "Блоки" })
 </head>
-<body class="page">
+<body class="page is-aside-menu-open">
 
     <div class="page__wrapper">
         <div class="page__header">
         	@@include('./html_include/header.html')
+
+            @@include('./html_include/main-menu.html')
         </div>
         
         <div class="page__middle">
@@ -23,7 +25,14 @@
     </div>
 
     @@include('./html_include/popups.html')
-    
     @@include('./html_include/scripts.html')
+
+    <!-- Эта часть только для локальной разработки. Начало. -->
+    <!-- Не копировать на боевой сайт -->
+    <link rel="stylesheet" type="text/css" href="./css/link-panel-local-build-only.css">
+    @@include('./html_include/link-panel-local-build-only.html')
+    <!-- Эта часть только для локальной разработки. Конец. -->
+    <!-- Не копировать на боевой сайт -->
+    
 </body>
 </html>
