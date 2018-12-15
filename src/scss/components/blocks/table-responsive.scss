@@ -1,17 +1,30 @@
-.table-responsive-wrap {
+.resp-table-wrap {
 	position: relative;
+
+  &__inner { -webkit-overflow-scrolling: touch; overflow-x: auto; position: relative; }
 	
-/*   &::before { content: "";
-  position: absolute; top: 0; left: 0; bottom: 0; z-index: 10; width:20px; 
-  background: linear-gradient(to right, rgba($color-brand-6,1) 0%,rgba($color-brand-6,0) 100%); 
-}
-&::after { content: "";
-  position: absolute; top: 0; right: 0; bottom: 0; z-index: 10; width:20px; 
-  background: linear-gradient(to right, rgba($color-brand-6,0) 0%,rgba($color-brand-6,1) 100%); 
-} */
+  &__left-border, &__right-border {
+    position: absolute; width: 20px; top: 0px; bottom: 0px; pointer-events: none; overflow: hidden;
+  }
+  &__left-border { left: 0; }
+  &__left-border:before {
+     content: ''; position: absolute; width: 1px; top: 15px; bottom: 15px; left: 0;  
+     box-shadow: 0px 0px 20px 0px $table-border-color;;   
+  }
+  &__left-border:after {
+      content: ''; position: absolute; width: 1px; top: 0px; bottom: 0px; left: 0; background: $table-border-color;
+  } 
+  &__right-border { right: 0; }
+  &__right-border:before {
+     content: ''; position: absolute; width: 1px; top: 15px; bottom: 15px; right: 0;  
+     box-shadow: 0px 0px 20px 0px $table-border-color;   
+  }
+  &__right-border:after {
+      content: ''; position: absolute; width: 1px; top: 0px; bottom: 0px; right: 0; background: $table-border-color;
+  } 
 }
 
-.table-responsive {
+.resp-table-wrap {
   overflow-x: auto;
   min-height: 0.01%;
 

@@ -1,16 +1,6 @@
 .text {
 
 	@include clearfix();
-	text-align: justify;
-
-	&--pos-up {
-		//margin-top: -1rem;
-		margin-top: 0;
-	}
-
-	&--big-bottom {
-		padding-bottom: 90px;
-	}
 
 	h1, .h1 {
 		@include h1();
@@ -18,27 +8,14 @@
 
 	h2, .h2 {
 		@include h2();
-
-		&.top{
-			margin-top: 2rem;
-		}
 	}
 
 	h3, .h3  {
 		@include h3();
-
-		
-		&.bottom-small{
-			margin-bottom: 0.5rem;
-		}
 	}
 
 	h4, .h4  {
 		@include h4();
-		
-		&.bottom0{
-			margin-bottom: 0;
-		}
 	}
 
 	h5, .h5  {
@@ -51,15 +28,10 @@
 
 	p {
 		margin: 0 0 1rem 0;
-
-		/* &:first-child {
-			margin-top: 0;
-		} */
 		
 		&.top{
 			margin-top: 2rem;
 		}
-		
 	}
 
 	a {
@@ -148,36 +120,20 @@
 		border-right: 0px solid transparent; 
 		border-top: 0px solid transparent;
 
-		tbody { 
+		& > tbody { 
 			border: 0px solid transparent;
-		}
-
-		th, td {
-			padding: $table-cell-padding;
-
-			p {
-				margin: 0;
-				padding: 0;
+			& > tr > th, & > tr > td {
+				padding: $table-cell-padding;
 			}
-		}
-
-		th {
-			//@include h4();
-			font-size: $font-size-h4;
-			padding: $table-cell-padding; 
-			text-align: left;
-			border-left: 0px solid transparent;
-			border-right: 0px solid transparent; 
-			border-bottom: 1px solid $table-border-color; 
-			border-top: 1px solid $table-border-color;
-			font-weight: $font-normal;
-		}
-
-		td {
-			border-bottom: 1px solid $table-border-color;
-			border-top: 0px solid transparent;
-			border-left: 0px solid transparent;
-			border-right: 0px solid transparent;
+			& > tr > th {
+				padding: $table-cell-padding; 
+				text-align: left;
+				border: 1px solid $table-border-color;
+				font-weight: $font-normal;	
+			}
+			& > tr > td {
+				border: 1px solid $table-border-color;
+			}
 		}
 
 		h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
