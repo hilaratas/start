@@ -1,5 +1,3 @@
 export default function () {
-
-    $('.js-tabs').tabs();
-
+  $('.js-tabs').tabs();
 }
